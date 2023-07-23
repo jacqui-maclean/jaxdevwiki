@@ -1,5 +1,90 @@
 [
   {
+    "images": ["images/constructorAndFactoryFunctions.jpg"],
+    "extraText": "",
+    "tags": ["object", "constructor", "factory", "functions"],
+    "slug": "objectConstructor",
+    "title": "Object Constructor"
+  },
+  {
+    "images": ["images/FunctionArgumentObject.jpg"],
+    "extraText": "",
+    "tags": ["function", "argument", "functions"],
+    "slug": "argumentObject",
+    "title": "The argument object"
+  },
+  {
+    "images": ["images/errorHandlingTryCatch.jpg"],
+    "extraText": "",
+    "tags": [
+      "function",
+      "error-handling",
+      "try",
+      "catch",
+      "error",
+      "handling",
+      "functions"
+    ],
+    "slug": "tryCatch",
+    "title": "Error Handling - Try/Catch blocks"
+  },
+  {
+    "images": ["images/cloningObjects.jpg"],
+    "extraText": "",
+    "tags": ["cloning", "clone", "object"],
+    "slug": "cloning",
+    "title": "Cloning"
+  },
+  {
+    "images": ["images/valueVSreferenceTypes.jpg"],
+    "extraText": "",
+    "tags": ["variables", "value", "reference", "types", "primitive"],
+    "slug": "valueVSreference",
+    "title": "Primitive/Value Types vs Reference Types"
+  },
+  {
+    "images": ["images/objectsOverview.jpg"],
+    "extraText": "",
+    "tags": ["variables", "object", "objects"],
+    "slug": "objectOverview",
+    "title": "Objects overview"
+  },
+  {
+    "images": ["images/loopingThruAnObject.jpg"],
+    "extraText": "",
+    "tags": ["loops", "loops", "object", "looping"],
+    "slug": "loops",
+    "title": "Looping over Objects"
+  },
+  {
+    "images": ["images/arrowFunctionsAndThis.jpg"],
+    "extraText": "",
+    "tags": ["arrow", "functions", "this"],
+    "slug": "arrow-function",
+    "title": "Arrow Functions and This"
+  },
+  {
+    "images": ["images/functionDeclarationVSexpressions.jpg"],
+    "extraText": "",
+    "tags": ["function", "declaration", "expression", "functions"],
+    "slug": "declarationAndExpression",
+    "title": "Function Declarations ans Expressions"
+  },
+  {
+    "images": ["images/Hoisting.jpg"],
+    "extraText": "",
+    "tags": ["function", "hoisting", "functions"],
+    "slug": "hoisting",
+    "title": "Hoisting"
+  },
+  {
+    "images": ["images/functionDefaultParameters.jpg"],
+    "extraText": "",
+    "tags": ["function", "default", "parameters", "params", "functions"],
+    "slug": "defaultParams",
+    "title": "Default Parameters"
+  },
+  {
     "images": [],
     "extraText": "",
     "tags": ["arrayMethods", "array", "methods"],
@@ -76,20 +161,7 @@
     "slug": "reference",
     "title": "Reference Types"
   },
-  {
-    "images": ["images/valueVSreferenceTypes.jpg"],
-    "extraText": "",
-    "tags": ["variables"],
-    "slug": "valueVSreference",
-    "title": "Primitive/Value Types vs Reference Types"
-  },
-  {
-    "images": ["images/objectsOverview.jpg"],
-    "extraText": "",
-    "tags": ["variables", "object"],
-    "slug": "objectOverview",
-    "title": "Objects overview"
-  },
+
   {
     "images": [],
     "extraText": "",
@@ -104,13 +176,7 @@
     "slug": "constructor",
     "title": "Object Constructor Functions"
   },
-  {
-    "images": ["images/cloningObjects.jpg"],
-    "extraText": "",
-    "tags": ["cloning", "clone", "objectCreation"],
-    "slug": "cloning",
-    "title": "Cloning"
-  },
+
   {
     "images": [],
     "extraText": "",
@@ -118,13 +184,7 @@
     "slug": "objectLiteral",
     "title": "Object Literal"
   },
-  {
-    "images": ["images/constructorAndFactoryFunctions.jpg"],
-    "extraText": "",
-    "tags": [],
-    "slug": "objectConstructor",
-    "title": "Object Constructor"
-  },
+
   {
     "images": [],
     "extraText": "",
@@ -153,13 +213,7 @@
     "slug": "objectThis",
     "title": "The 'this' keyword"
   },
-  {
-    "images": ["images/loopingThruAnObject.jpg"],
-    "extraText": "",
-    "tags": ["loops", "loops", "object"],
-    "slug": "loops",
-    "title": "Looping over Objects"
-  },
+
   {
     "images": [],
     "extraText": "",
@@ -167,54 +221,12 @@
     "slug": "loopsArrayVSObjects",
     "title": "Compare looping over Objects with Looping over Arrays"
   },
-  {
-    "images": ["images/functionDeclarationVSexpressions.jpg"],
-    "extraText": "",
-    "tags": ["function", "declaration", "expression", "functions"],
-    "slug": "declarationAndExpression",
-    "title": "Function Declarations ans Expressions"
-  },
-  {
-    "images": ["images/Hoisting.jpg"],
-    "extraText": "",
-    "tags": ["function", "hoisting", "functions"],
-    "slug": "hoisting",
-    "title": "Hoisting"
-  },
-  {
-    "images": ["images/functionDefaultParameters.jpg"],
-    "extraText": "",
-    "tags": ["function", "default", "parameters", "params", "functions"],
-    "slug": "defaultParams",
-    "title": "Default Parameters"
-  },
+
   {
     "images": [],
     "extraText": "",
     "tags": ["function", "getters", "setters", "functions"],
     "slug": "gettersAndSetters",
     "title": "Getters and Setters"
-  },
-  {
-    "images": ["images/functionArgumentObject.jpg"],
-    "extraText": "",
-    "tags": ["function", "argument-object", "argument", "functions"],
-    "slug": "argumentObject",
-    "title": "The argument object"
-  },
-  {
-    "images": ["images/errorHandlingTryCatch.jpg"],
-    "extraText": "",
-    "tags": [
-      "function",
-      "error-handling",
-      "try",
-      "catch",
-      "error",
-      "handling",
-      "functions"
-    ],
-    "slug": "tryCatch",
-    "title": "Error Handling - Try/Catch blocks"
   }
 ]
