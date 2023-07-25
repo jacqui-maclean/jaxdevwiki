@@ -3,7 +3,7 @@ import { useState } from "react";
 interface Props {
   onSearch: (searchTerm: string) => void;
 }
-const Search = ({ onSearch }: Props) => {
+const SearchInput = ({ onSearch }: Props) => {
   const [searchTerm, setSearchTerm] = useState("");
   return (
     <div className="input-group mb-3">
@@ -34,4 +34,4 @@ const Search = ({ onSearch }: Props) => {
   );
 };
 
-export default Search;
+export default SearchInput;
