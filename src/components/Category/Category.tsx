@@ -1,22 +1,15 @@
 import { Product } from "../../App";
-import "./Category.css";
 import { CgNotes } from "react-icons/cg";
+import "./Category.css";
 
 interface Props {
-  products: Product[] | undefined;
+  products: Product[];
   foundProducts: Product[] | undefined;
   heading: string;
   handleClick: (product: Product) => void;
-  selectedProduct: Product | undefined;
 }
 
-const Category = ({
-  products,
-  foundProducts,
-  heading,
-  handleClick,
-  selectedProduct,
-}: Props) => {
+const Category = ({ products, foundProducts, heading, handleClick }: Props) => {
   let renderedHeading = heading.toUpperCase();
   let items = products?.filter((item) => item.category == heading);
   return (
@@ -37,8 +30,7 @@ const Category = ({
           onClick={() => handleClick(item)}
         >
           {item.title}
-          {item.images.length > 0 ? <CgNotes /> : null}
-          {selectedProduct?.title === item.title ? <p>"no notes yet"</p> : null}
+          {item.images.length > 0 && <CgNotes />}
         </div>
       ))}
     </div>

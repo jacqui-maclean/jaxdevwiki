@@ -5,7 +5,7 @@ import Category from "./Category/Category";
 import CardGrid from "./CardGrid";
 import Card from "./CardSimple";
 import Modal from "./Modal/Modal";
-
+//TODO wire up the clear button so it empties found array (already resets the input field)
 interface Props {
   products: Product[];
 }
@@ -13,7 +13,6 @@ interface Props {
 const FileList = ({ products }: Props) => {
   const [foundItems, setFoundItems] = useState<Product[]>();
   const [showModal, setShowModal] = useState(false);
-  const [advisory, setAdvisory] = useState("");
   const [selectedProduct, setSelectedProduct] = useState<Product>();
   const handleSearch = (searchTerm: string) => {
     let searchResult = products?.filter((item) =>
@@ -27,9 +26,8 @@ const FileList = ({ products }: Props) => {
   const handleModal = (product: Product) => {
     console.log("product is", product.title);
     console.log("product images", product.images);
-    product.images.length > 0
-      ? (setShowModal(true), setSelectedProduct(product), setAdvisory(""))
-      : setAdvisory("no notes yet");
+    product.images.length > 0 &&
+      (setShowModal(true), setSelectedProduct(product));
   };
   //separate the data into two arrays found/not found so we can display them separately
   let inputData: Product[] | undefined = foundItems
@@ -68,7 +66,6 @@ const FileList = ({ products }: Props) => {
             products={products}
             foundProducts={foundItems}
             handleClick={handleModal}
-            selectedProduct={selectedProduct}
           />
         </Card>
         <Card>
@@ -77,7 +74,6 @@ const FileList = ({ products }: Props) => {
             products={products}
             foundProducts={foundItems}
             handleClick={handleModal}
-            selectedProduct={selectedProduct}
           />
         </Card>
         <Card>
@@ -86,7 +82,6 @@ const FileList = ({ products }: Props) => {
             products={products}
             foundProducts={foundItems}
             handleClick={handleModal}
-            selectedProduct={selectedProduct}
           />
         </Card>
         <Card>
@@ -95,7 +90,6 @@ const FileList = ({ products }: Props) => {
             products={products}
             foundProducts={foundItems}
             handleClick={handleModal}
-            selectedProduct={selectedProduct}
           />
         </Card>
       </CardGrid>
@@ -111,6 +105,3 @@ const FileList = ({ products }: Props) => {
 };
 
 export default FileList;
-function setSelectedItem(product: Product) {
-  throw new Error("Function not implemented.");
-}
