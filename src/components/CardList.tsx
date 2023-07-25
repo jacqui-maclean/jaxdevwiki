@@ -1,7 +1,7 @@
-import Card from "./Card";
+import Card from "./Card/Card";
 import { Product } from "../App";
 import { useState } from "react";
-import Search from "./Search";
+import SearchInput from "./SearchInput";
 
 interface Props {
   products: Product[];
@@ -25,8 +25,8 @@ const CardList = ({ products }: Props) => {
 
   return (
     <>
-      <Search onSearch={handleSearch} />
-      <div className="d-inline-flex flex-wrap justify-content-around align-items-center">
+      <SearchInput onSearch={handleSearch} />
+      <div className="d-flex flex-wrap justify-content-around align-items-center">
         {found
           ? found.map((product: Product) => {
               return (
@@ -35,7 +35,7 @@ const CardList = ({ products }: Props) => {
                   style={{
                     borderColor: "dodgerblue",
                     borderStyle: "solid",
-                    borderWidth: "1px",
+                    borderWidth: "3px",
                     borderRadius: "5px",
                   }}
                 >
