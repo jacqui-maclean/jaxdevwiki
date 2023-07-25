@@ -14,6 +14,7 @@ export interface Product {
   tags: string[];
   slug: string;
   title: string;
+  category: string;
 }
 
 function App() {
