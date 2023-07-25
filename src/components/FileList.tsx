@@ -6,6 +6,7 @@ import CardGrid from "./CardGrid";
 import Card from "./CardSimple";
 import Modal from "./Modal/Modal";
 //TODO wire up the clear button so it empties found array (already resets the input field)
+//TODO explore rerender to force animation on click in Category component
 interface Props {
   products: Product[];
 }
@@ -14,6 +15,7 @@ const FileList = ({ products }: Props) => {
   const [foundItems, setFoundItems] = useState<Product[]>();
   const [showModal, setShowModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product>();
+  const [clickedItem, setClickedItem] = useState<string>();
   const handleSearch = (searchTerm: string) => {
     let searchResult = products?.filter((item) =>
       item.tags.includes(searchTerm)
@@ -26,8 +28,9 @@ const FileList = ({ products }: Props) => {
   const handleModal = (product: Product) => {
     console.log("product is", product.title);
     console.log("product images", product.images);
-    product.images.length > 0 &&
-      (setShowModal(true), setSelectedProduct(product));
+    product.images.length > 0
+      ? (setShowModal(true), setSelectedProduct(product))
+      : setClickedItem(product.title);
   };
   //separate the data into two arrays found/not found so we can display them separately
   let inputData: Product[] | undefined = foundItems
@@ -66,6 +69,7 @@ const FileList = ({ products }: Props) => {
             products={products}
             foundProducts={foundItems}
             handleClick={handleModal}
+            clickedItem={clickedItem}
           />
         </Card>
         <Card>
@@ -74,6 +78,7 @@ const FileList = ({ products }: Props) => {
             products={products}
             foundProducts={foundItems}
             handleClick={handleModal}
+            clickedItem={clickedItem}
           />
         </Card>
         <Card>
@@ -82,6 +87,7 @@ const FileList = ({ products }: Props) => {
             products={products}
             foundProducts={foundItems}
             handleClick={handleModal}
+            clickedItem={clickedItem}
           />
         </Card>
         <Card>
@@ -90,6 +96,7 @@ const FileList = ({ products }: Props) => {
             products={products}
             foundProducts={foundItems}
             handleClick={handleModal}
+            clickedItem={clickedItem}
           />
         </Card>
       </CardGrid>
