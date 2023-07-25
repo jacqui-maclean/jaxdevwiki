@@ -25,3 +25,8 @@
 .display-none {
   display: none;
 }
+.gradientModal {
+  background: linear-gradient(90deg, #171321, #29203b);
+  /* For older browsers that don't support gradients, you can add a fallback background color */
+  background-color: #1a181a;
+}

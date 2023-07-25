@@ -12,8 +12,8 @@ const Modal = ({ handleClose, show, image }: Props) => {
     : "customModal display-none";
   return (
     <div style={{ zIndex: "1" }} className={showHideClassName}>
-      <section className="customModal-main">
-        <img src={image} width="300px" height="500" />
+      <section className="customModal-main gradientModal">
+        <img src={image} width="500px" height="700" />
         <button type="button" onClick={handleClose} className="btn btn-primary">
           Close
         </button>
