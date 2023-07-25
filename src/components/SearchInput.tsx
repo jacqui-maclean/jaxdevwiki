@@ -6,7 +6,7 @@ interface Props {
 const SearchInput = ({ onSearch }: Props) => {
   const [searchTerm, setSearchTerm] = useState("");
   return (
-    <div className="input-group mb-3">
+    <div className="input-group mb-3 pt-3">
       <input
         type="text"
         className="form-control"
