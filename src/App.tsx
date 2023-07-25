@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import data from "./assets/data.json";
 import "./App.css";
 import CardList from "./components/CardList";
+import FileList from "./components/FileList";
 
 interface Data {
   data: Product[];
@@ -19,27 +20,9 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="App">
-      {/* <img
-        src="/images/arrowFunctionsAndThis.jpg"
-        height="400px"
-        width="400px"
-        alt="Example"
-      /> */}
-      <CardList products={data} />
-      {/* {data.map((item) => (
-        <div>
-          {item.title}
-
-          <img
-            src={item.images[0]}
-            height="400px"
-            width="400px"
-            alt="Example"
-          />
-         
-        </div>
-      ))} */}
+    <div className="container bg">
+      {/* <CardList products={data} /> */}
+      <FileList products={data} />
     </div>
   );
 }
