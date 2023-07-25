@@ -2,7 +2,7 @@ import { Product } from "../App";
 import { useState } from "react";
 import SearchInput from "./SearchInput";
 import { CgNotes } from "react-icons/cg";
-import Category from "./Category";
+import Category from "./Category/Category";
 import CardGrid from "./CardGrid";
 import Card from "./CardSimple";
 
@@ -52,16 +52,32 @@ const FileList = ({ products }: Props) => {
       </div>
       <CardGrid>
         <Card>
-          <Category products={inputData} heading="array" />
+          <Category
+            products={products}
+            foundProducts={foundItems}
+            heading="array"
+          />
         </Card>
         <Card>
-          <Category products={inputData} heading="functions" />
+          <Category
+            products={products}
+            foundProducts={foundItems}
+            heading="functions"
+          />
         </Card>
         <Card>
-          <Category products={inputData} heading="objects" />
+          <Category
+            products={products}
+            foundProducts={foundItems}
+            heading="objects"
+          />
         </Card>
         <Card>
-          <Category products={inputData} heading="variables" />
+          <Category
+            products={products}
+            foundProducts={foundItems}
+            heading="variables"
+          />
         </Card>
       </CardGrid>
     </>
