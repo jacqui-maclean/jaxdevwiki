@@ -4,14 +4,16 @@
     "extraText": "",
     "tags": ["object", "constructor", "factory", "functions"],
     "slug": "objectConstructor",
-    "title": "Object Constructor"
+    "title": "Object Constructor",
+    "category": "objects"
   },
   {
     "images": ["images/FunctionArgumentObject.jpg"],
     "extraText": "",
     "tags": ["function", "argument", "functions"],
     "slug": "argumentObject",
-    "title": "The argument object"
+    "title": "The argument object",
+    "category": "functions"
   },
   {
     "images": ["images/errorHandlingTryCatch.jpg"],
@@ -26,207 +28,220 @@
       "functions"
     ],
     "slug": "tryCatch",
-    "title": "Error Handling - Try/Catch blocks"
+    "title": "Error Handling - Try/Catch blocks",
+    "category": "functions"
   },
   {
     "images": ["images/cloningObjects.jpg"],
     "extraText": "",
     "tags": ["cloning", "clone", "object"],
     "slug": "cloning",
-    "title": "Cloning"
+    "title": "Cloning",
+    "category": "objects"
   },
   {
     "images": ["images/valueVSreferenceTypes.jpg"],
     "extraText": "",
     "tags": ["variables", "value", "reference", "types", "primitive"],
     "slug": "valueVSreference",
-    "title": "Primitive/Value Types vs Reference Types"
+    "title": "Primitive/Value Types vs Reference Types",
+    "category": "objects"
   },
   {
     "images": ["images/objectsOverview.jpg"],
     "extraText": "",
     "tags": ["variables", "object", "objects"],
     "slug": "objectOverview",
-    "title": "Objects overview"
+    "title": "Objects overview",
+    "category": "objects"
   },
   {
     "images": ["images/loopingThruAnObject.jpg"],
     "extraText": "",
     "tags": ["loops", "loops", "object", "looping"],
     "slug": "loops",
-    "title": "Looping over Objects"
+    "title": "Looping over Objects",
+    "category": "objects"
   },
   {
     "images": ["images/arrowFunctionsAndThis.jpg"],
     "extraText": "",
     "tags": ["arrow", "functions", "this"],
     "slug": "arrow-function",
-    "title": "Arrow Functions and This"
+    "title": "Arrow Functions and This",
+    "category": "functions"
   },
   {
     "images": ["images/functionDeclarationVSexpressions.jpg"],
     "extraText": "",
     "tags": ["function", "declaration", "expression", "functions"],
     "slug": "declarationAndExpression",
-    "title": "Function Declarations ans Expressions"
+    "title": "Function Declarations and Expressions",
+    "category": "functions"
   },
   {
     "images": ["images/Hoisting.jpg"],
     "extraText": "",
     "tags": ["function", "hoisting", "functions"],
     "slug": "hoisting",
-    "title": "Hoisting"
+    "title": "Hoisting",
+    "category": "functions"
   },
   {
     "images": ["images/functionDefaultParameters.jpg"],
     "extraText": "",
     "tags": ["function", "default", "parameters", "params", "functions"],
     "slug": "defaultParams",
-    "title": "Default Parameters"
+    "title": "Default Parameters",
+    "category": "functions"
   },
   {
-    "images": [],
+    "images": ["images/arrayFilter.jpg"],
     "extraText": "",
-    "tags": ["arrayMethods", "array", "methods"],
+    "tags": ["arrayMethods", "array", "methods", "filter"],
     "slug": "Array.filter",
-    "title": "Array.filter"
+    "title": "Array.filter",
+    "category": "array"
   },
   {
     "images": [],
     "extraText": "",
     "tags": ["arrayMethods", "array", "methods"],
     "slug": "Array.map",
-    "title": "Array.map"
+    "title": "Array.map",
+    "category": "array"
   },
   {
     "images": [],
     "extraText": "",
     "tags": ["arrayMethods", "array", "methods"],
     "slug": "Array.forEach",
-    "title": "Array.forEach"
+    "title": "Array.forEach",
+    "category": "array"
   },
   {
     "images": [],
     "extraText": "",
     "tags": ["arrayMethods", "array", "methods"],
     "slug": "Array.every",
-    "title": "Array.every"
+    "title": "Array.every",
+    "category": "array"
   },
   {
     "images": [],
     "extraText": "",
     "tags": ["arrayMethods", "array", "methods"],
     "slug": "Array.some",
-    "title": "Array.some"
+    "title": "Array.some",
+    "category": "array"
   },
   {
     "images": [],
     "extraText": "",
     "tags": ["arrayMethods", "array", "methods"],
     "slug": "Array.find",
-    "title": "Array.find"
+    "title": "Array.find",
+    "category": "array"
   },
   {
     "images": [],
-    "extraText": "",
-    "tags": ["arrayMethods", "array", "methods"],
+    "extraText": "finds and returns the first element that matches the condition",
+    "tags": ["arrayMethods", "array", "methods", "find"],
     "slug": "Array.findIndex",
-    "title": "Array.findIndex"
+    "title": "Array.findIndex",
+    "category": "array"
   },
   {
-    "images": [],
+    "images": ["images/arrayReduce.jpg"],
     "extraText": "",
-    "tags": ["arrayMethods", "array", "methods"],
+    "tags": ["arrayMethods", "array", "methods", "reduce"],
     "slug": "Array.reduce",
-    "title": "Array.reduce"
+    "title": "Array.reduce",
+    "category": "array"
   },
   {
-    "images": [],
+    "images": ["images/arraySort.jpg"],
     "extraText": "",
-    "tags": ["arrayMethods", "array", "methods"],
+    "tags": ["arrayMethods", "array", "methods", "sort"],
     "slug": "Array.sort",
-    "title": "Array.sort"
+    "title": "Array.sort",
+    "category": "array"
   },
   {
-    "images": [],
+    "images": ["images/diffsBetweenVarLetConst.jpg"],
     "extraText": "",
-    "tags": ["variables"],
+    "tags": ["variables", "var", "let", "const"],
     "slug": "primitives",
-    "title": "Primitive/Value Types"
+    "title": "Diff between var, let and const",
+    "category": "variables"
   },
   {
     "images": [],
     "extraText": "",
-    "tags": ["variables"],
+    "tags": ["variables", "object"],
     "slug": "reference",
-    "title": "Reference Types"
+    "title": "Reference Types",
+    "category": "variables"
   },
 
   {
     "images": [],
     "extraText": "",
-    "tags": ["factory", "objectCreation"],
+    "tags": ["factory", "objectCreation", "function"],
     "slug": "factory",
-    "title": "Object Factory Functions"
+    "title": "Object Factory Functions",
+    "category": "objects"
   },
   {
     "images": [],
     "extraText": "",
-    "tags": ["constructor", "objectCreation"],
+    "tags": ["constructor", "object", "function"],
     "slug": "constructor",
-    "title": "Object Constructor Functions"
+    "title": "Object Constructor Functions",
+    "category": "objects"
   },
 
   {
     "images": [],
-    "extraText": "",
+    "extraText": "This when you literally write out the object",
     "tags": ["objectCreation", "object", "literal"],
     "slug": "objectLiteral",
-    "title": "Object Literal"
+    "title": "Object Literal",
+    "category": "objects"
   },
 
   {
-    "images": [],
-    "extraText": "",
-    "tags": [],
-    "slug": "objectMethods",
-    "title": "Object Methods"
+    "images": ["images/objectEntries.jpg"],
+    "extraText": "converts each property in an object into an key/value array",
+    "tags": [
+      "object",
+      "methods",
+      "entries",
+      "objectMethods",
+      "loops",
+      "looping",
+      "for-in",
+      "loop"
+    ],
+    "slug": "objectEntries",
+    "title": "Object Entries",
+    "category": "objects"
   },
   {
     "images": [],
     "extraText": "",
-    "tags": [],
-    "slug": "objectProperties",
-    "title": "Object Properties"
-  },
-  {
-    "images": [],
-    "extraText": "",
-    "tags": [],
-    "slug": "objectAccess",
-    "title": "Accessing Object Properties"
-  },
-  {
-    "images": [],
-    "extraText": "",
-    "tags": [],
-    "slug": "objectThis",
-    "title": "The 'this' keyword"
-  },
-
-  {
-    "images": [],
-    "extraText": "",
-    "tags": ["loops", "loops", "object", "array"],
+    "tags": ["loops", "loops", "looping", "object", "array"],
     "slug": "loopsArrayVSObjects",
-    "title": "Compare looping over Objects with Looping over Arrays"
+    "title": "Compare looping over Objects with Looping over Arrays",
+    "category": "objects"
   },
 
   {
     "images": [],
     "extraText": "",
-    "tags": ["function", "getters", "setters", "functions"],
+    "tags": ["function", "getters", "setters", "functions", "object"],
     "slug": "gettersAndSetters",
-    "title": "Getters and Setters"
+    "title": "Getters and Setters",
+    "category": "objects"
   }
 ]
