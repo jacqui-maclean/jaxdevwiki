@@ -1,10 +1,10 @@
 import { Product } from "../App";
 import { useState } from "react";
 import SearchInput from "./SearchInput";
-import { CgNotes } from "react-icons/cg";
 import Category from "./Category/Category";
 import CardGrid from "./CardGrid";
 import Card from "./CardSimple";
+import Modal from "./Modal/Modal";
 
 interface Props {
   products: Product[];
@@ -12,6 +12,9 @@ interface Props {
 
 const FileList = ({ products }: Props) => {
   const [foundItems, setFoundItems] = useState<Product[]>();
+  const [showModal, setShowModal] = useState(false);
+  const [advisory, setAdvisory] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState<Product>();
   const handleSearch = (searchTerm: string) => {
     let searchResult = products?.filter((item) =>
       item.tags.includes(searchTerm)
@@ -19,6 +22,14 @@ const FileList = ({ products }: Props) => {
     if (searchResult.length > 0) {
       setFoundItems(searchResult);
     }
+  };
+
+  const handleModal = (product: Product) => {
+    console.log("product is", product.title);
+    console.log("product images", product.images);
+    product.images.length > 0
+      ? (setShowModal(true), setSelectedProduct(product), setAdvisory(""))
+      : setAdvisory("no notes yet");
   };
   //separate the data into two arrays found/not found so we can display them separately
   let inputData: Product[] | undefined = foundItems
@@ -53,35 +64,53 @@ const FileList = ({ products }: Props) => {
       <CardGrid>
         <Card>
           <Category
-            products={products}
-            foundProducts={foundItems}
             heading="array"
+            products={products}
+            foundProducts={foundItems}
+            handleClick={handleModal}
+            selectedProduct={selectedProduct}
           />
         </Card>
         <Card>
           <Category
-            products={products}
-            foundProducts={foundItems}
             heading="functions"
+            products={products}
+            foundProducts={foundItems}
+            handleClick={handleModal}
+            selectedProduct={selectedProduct}
           />
         </Card>
         <Card>
           <Category
-            products={products}
-            foundProducts={foundItems}
             heading="objects"
+            products={products}
+            foundProducts={foundItems}
+            handleClick={handleModal}
+            selectedProduct={selectedProduct}
           />
         </Card>
         <Card>
           <Category
+            heading="variables"
             products={products}
             foundProducts={foundItems}
-            heading="variables"
+            handleClick={handleModal}
+            selectedProduct={selectedProduct}
           />
         </Card>
       </CardGrid>
+      <main>
+        <Modal
+          image={selectedProduct?.images[0]}
+          show={showModal}
+          handleClose={() => setShowModal(false)}
+        />
+      </main>
     </>
   );
 };
 
 export default FileList;
+function setSelectedItem(product: Product) {
+  throw new Error("Function not implemented.");
+}
