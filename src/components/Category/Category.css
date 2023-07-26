@@ -2,13 +2,51 @@
   color: #111211 !important;
   background-color: #a576db8f;
 }
+
+/* when the element is clicked the clicked-warning class is added to the element and then 
+removed with a setTimeout function, and in its place the unwarning class is added.  */
+
+/* APPLY ALL THREE OF THESE CLASSES TO THE ELEMENT YOU WANT TO BOUNCE */
+.soften-effect {
+  /* this class is always on the element you plan to click */
+  transition: transform 1s ease-in-out;
+  /* Set the transition property with the desired duration and timing function */
+}
+.bounce {
+  transform: translateY(-3px); /* add when button clicked  */
+}
+.unbounce {
+  transform: translateY(
+    3px
+  ); /* replace bounce with unbounce using setTimeout  */
+}
+/* ---------------------- */
+
+/* enables the element to fade in from black to red and fade back to black
+    - no need for soften-effect class*/
+.glow {
+  /*add on click*/
+  transition: color 0.2s ease;
+  color: red;
+}
+.unglow {
+  /*replace glow with unglow using setTimeout*/
+  transition: color 2s ease;
+  color: black;
+}
+
+/* ---------------------- */
+
+/* I tried animating, as below, tried several different approaches - 
+    ›but it did not apply correctly, so I made similar effects with transform - see above*/
+
 /* Define the fade-in animation */
 @keyframes fadeIn {
   from {
     opacity: 1;
   }
   to {
-    opacity: 0.2;
+    opacity: 0;
   }
   to {
     opacity: 1;
@@ -18,16 +56,9 @@
 /* Apply the animation to the element with the .fadeIn class */
 .fadeIn {
   color: red;
-  /* animation: fadeIn 5s ease-in-out;  */
-  /* Adjust the duration and timing function as needed */
+  animation: fadeIn 8s ease-in-out;
 }
-
-.moving-element {
-  transition: transform 0.5s ease-in-out; /* Set the transition property with the desired duration and timing function */
-}
-
-.clicked-element {
-  transform: translateX(
-    10px
-  ); /* Move the element 10 pixels to the right on hover */
+.unfadeIn {
+  color: black;
+  animation: fadeIn 8s ease-in-out;
 }

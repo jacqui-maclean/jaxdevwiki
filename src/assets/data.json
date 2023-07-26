@@ -123,12 +123,24 @@
     "category": "functions"
   },
   {
-    "images": [],
+    "images": [
+      "images/cssTransformonClickCss.png",
+      "images/CssTransformOnClickJSX.png"
+    ],
     "extraText": "",
-    "tags": ["arrayMethods", "array", "methods"],
-    "slug": "Array.forEach",
-    "title": "Array.forEach",
-    "category": "array"
+    "tags": [
+      "css",
+      "transform",
+      "animate",
+      "animation",
+      "onClick",
+      "click",
+      "transformations",
+      "transition"
+    ],
+    "slug": "CssTransformOnClick",
+    "title": "CSS Transform on Click, bounce/fade",
+    "category": "functions"
   },
   {
     "images": [],
