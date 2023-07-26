@@ -159,8 +159,8 @@
     "category": "array"
   },
   {
-    "images": [],
-    "extraText": "",
+    "images": ["images/arrayFind1.png", "images/arrayFind2.png"],
+    "extraText": "Using find to check whether a matching element exists in an array, and returning that element if it does",
     "tags": ["arrayMethods", "array", "methods"],
     "slug": "Array.find",
     "title": "Array.find",

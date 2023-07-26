@@ -104,6 +104,7 @@ const FileList = ({ products }: Props) => {
       <main>
         <Modal
           image={selectedProduct?.images[0]}
+          images={selectedProduct?.images}
           show={showModal}
           handleClose={() => setShowModal(false)}
         />
