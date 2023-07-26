@@ -1,7 +1,7 @@
 import { Product } from "../../App";
 import { CgNotes } from "react-icons/cg";
 import "./Category.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface Props {
   products: Product[];
@@ -11,15 +11,8 @@ interface Props {
   clickedItem: string | undefined;
 }
 
-const Category = ({
-  products,
-  foundProducts,
-  heading,
-  handleClick,
-  clickedItem,
-}: Props) => {
-  const [clickedTitle, setClickedTitle] = useState<string>("uncleTomCobbley");
-  const [isMovingRight, setIsMovingRight] = useState(false);
+const Category = ({ products, foundProducts, heading, handleClick }: Props) => {
+  const [clickedProduct, setClickedProduct] = useState<Product | null>(null);
 
   let renderedHeading = heading.toUpperCase();
   let items = products?.filter((item) => item.category == heading);
@@ -35,16 +28,20 @@ const Category = ({
             foundProducts?.find(
               (foundProduct) => foundProduct.title === item.title
             )?.title
-              ? "found moving-element" +
-                (clickedTitle === item.title ? " clicked-element" : "")
-              : "moving-element" +
-                (clickedItem === item.title ? " clicked-element" : "")
+              ? "found soften-effect " +
+                (clickedProduct === item ? " bounce " : "unbounce")
+              : "soften-effect " +
+                (clickedProduct === item ? " bounce " : "unbounce")
           }
           //add some interactivity to the clicked element, to feedback to user that their click was registered
           style={{ cursor: "pointer" }}
           onClick={() => {
             handleClick(item);
-            setClickedTitle(item.title);
+            setClickedProduct(item);
+            // Remove the "clicked" class after a short delay (500ms)
+            setTimeout(() => {
+              setClickedProduct(null);
+            }, 500);
           }}
         >
           {item.title}

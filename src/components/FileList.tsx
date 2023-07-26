@@ -5,8 +5,7 @@ import Category from "./Category/Category";
 import CardGrid from "./CardGrid";
 import Card from "./CardSimple";
 import Modal from "./Modal/Modal";
-//TODO wire up the clear button so it empties found array (already resets the input field)
-//TODO explore rerender to force animation on click in Category component
+
 interface Props {
   products: Product[];
 }
@@ -22,6 +21,8 @@ const FileList = ({ products }: Props) => {
     );
     if (searchResult.length > 0) {
       setFoundItems(searchResult);
+    } else {
+      setFoundItems([]);
     }
   };
 
