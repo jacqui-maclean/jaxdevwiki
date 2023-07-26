@@ -97,7 +97,7 @@
   },
   {
     "images": ["images/arrayFilter.jpg"],
-    "extraText": "",
+    "extraText": "in the example below - myArray is NOT mutated",
     "tags": ["arrayMethods", "array", "methods", "filter"],
     "slug": "Array.filter",
     "title": "Array.filter",
@@ -159,20 +159,20 @@
     "category": "array"
   },
   {
-    "images": ["images/arrayFind1.png", "images/arrayFind2.png"],
+    "images": ["images/ArrayFind1a.png", "images/arrayFind.png"],
     "extraText": "Using find to check whether a matching element exists in an array, and returning that element if it does",
-    "tags": ["arrayMethods", "array", "methods"],
+    "tags": ["arrayMethods", "array", "methods", "find"],
     "slug": "Array.find",
     "title": "Array.find",
     "category": "array"
   },
   {
-    "images": [],
-    "extraText": "finds and returns the first element that matches the condition",
-    "tags": ["arrayMethods", "array", "methods", "find"],
-    "slug": "Array.findIndex",
-    "title": "Array.findIndex",
-    "category": "array"
+    "images": ["images/twoFuncsInTernaryCondition.png"],
+    "extraText": "Wrap the two functions in braces and comma separate them",
+    "tags": ["ternary", "two", "functions", "function", "syntax"],
+    "slug": "combinedFunctionInTernary",
+    "title": "How to call two functions in a ternary condition",
+    "category": "functions"
   },
   {
     "images": ["images/arrayReduce.jpg"],

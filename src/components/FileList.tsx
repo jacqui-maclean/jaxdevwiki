@@ -8,9 +8,10 @@ import Modal from "./Modal/Modal";
 
 interface Props {
   products: Product[];
+  onClick: (product: Product) => void;
 }
 
-const FileList = ({ products }: Props) => {
+const FileList = ({ products, onClick }: Props) => {
   const [foundItems, setFoundItems] = useState<Product[]>();
   const [showModal, setShowModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product>();
@@ -33,13 +34,15 @@ const FileList = ({ products }: Props) => {
       ? (setShowModal(true), setSelectedProduct(product))
       : setClickedItem(product.title);
   };
-  //separate the data into two arrays found/not found so we can display them separately
+  //if there are any entries in foundItems, then separate the data into two arrays found/not found
+  //inputData will be mutated so that any items that are found will be removed from the inputData array
   let inputData: Product[] | undefined = foundItems
     ? products?.filter(
         (product) =>
           product.title !==
           foundItems.find((item) => item.title === product.title)?.title
         //find the item in the foundItems array that matches the product title
+        //find will return the entire item if there is a match, use dot notation to extract the title
         //if it matches then filter it out of the inputData array
       )
     : products;
@@ -69,7 +72,7 @@ const FileList = ({ products }: Props) => {
             heading="array"
             products={products}
             foundProducts={foundItems}
-            handleClick={handleModal}
+            handleClick={onClick}
             clickedItem={clickedItem}
           />
         </Card>
@@ -78,7 +81,7 @@ const FileList = ({ products }: Props) => {
             heading="functions"
             products={products}
             foundProducts={foundItems}
-            handleClick={handleModal}
+            handleClick={onClick}
             clickedItem={clickedItem}
           />
         </Card>
@@ -87,7 +90,7 @@ const FileList = ({ products }: Props) => {
             heading="objects"
             products={products}
             foundProducts={foundItems}
-            handleClick={handleModal}
+            handleClick={onClick}
             clickedItem={clickedItem}
           />
         </Card>
@@ -96,7 +99,7 @@ const FileList = ({ products }: Props) => {
             heading="variables"
             products={products}
             foundProducts={foundItems}
-            handleClick={handleModal}
+            handleClick={onClick}
             clickedItem={clickedItem}
           />
         </Card>
@@ -105,6 +108,7 @@ const FileList = ({ products }: Props) => {
         <Modal
           image={selectedProduct?.images[0]}
           images={selectedProduct?.images}
+          extraText={selectedProduct?.extraText}
           show={showModal}
           handleClose={() => setShowModal(false)}
         />

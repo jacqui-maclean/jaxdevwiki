@@ -24,10 +24,11 @@ const Category = ({ products, foundProducts, heading, handleClick }: Props) => {
           key={item.slug}
           //check to see if the item is in the foundProducts array
           className={
-            item.title ===
+            item.title === //if current item title matches the title of an item in the foundProducts array
             foundProducts?.find(
+              //foundProducts?.find will return the whole item if there is a match
               (foundProduct) => foundProduct.title === item.title
-            )?.title
+            )?.title //then we extract the title with dot notation so we can match it to the item.title
               ? "found soften-effect " +
                 (clickedProduct === item ? " bounce " : "unbounce")
               : "soften-effect " +

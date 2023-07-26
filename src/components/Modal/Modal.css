@@ -20,7 +20,6 @@
 
 .content-container {
   position: relative;
-  height: 100%;
   /* overflow-y: auto; 
   Add this line to make the content scrollable */
 }

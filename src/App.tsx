@@ -1,8 +1,7 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import data from "./assets/data.json";
 import "./App.css";
-import CardList from "./components/CardList";
+import SubjectDetail from "./components/SubjectDetail/SubjectDetail";
 import FileList from "./components/FileList";
 
 interface Data {
@@ -18,12 +17,34 @@ export interface Product {
 }
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [pageType, setPageType] = useState("list");
+  const [selectedSubject, setSelectedSubject] = useState<Product>();
+
+  const handleClick = (product: Product) => {
+    console.log("from handleClick in App.tsx ", product.title);
+    if (product.images.length > 0) {
+      setPageType("detail");
+      setSelectedSubject(product);
+    } else {
+      console.log("no images for " + product.title);
+    }
+  };
+
+  const handleSubjectClose = () => {
+    setPageType("list");
+  };
 
   return (
-    <div className="container bg">
+    <div className="container">
       {/* <CardList products={data} /> */}
-      <FileList products={data} />
+      {pageType === "list" ? (
+        <FileList products={data} onClick={handleClick} />
+      ) : (
+        <SubjectDetail
+          selectedSubject={selectedSubject}
+          onSubjectClose={handleSubjectClose}
+        />
+      )}
     </div>
   );
 }
