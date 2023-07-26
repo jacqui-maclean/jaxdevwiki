@@ -17,5 +17,17 @@
 
 /* Apply the animation to the element with the .fadeIn class */
 .fadeIn {
-  animation: fadeIn 5s ease-in-out; /* Adjust the duration and timing function as needed */
+  color: red;
+  /* animation: fadeIn 5s ease-in-out;  */
+  /* Adjust the duration and timing function as needed */
+}
+
+.moving-element {
+  transition: transform 0.5s ease-in-out; /* Set the transition property with the desired duration and timing function */
+}
+
+.clicked-element {
+  transform: translateX(
+    10px
+  ); /* Move the element 10 pixels to the right on hover */
 }

@@ -19,20 +19,8 @@ const Category = ({
   clickedItem,
 }: Props) => {
   const [clickedTitle, setClickedTitle] = useState<string>("uncleTomCobbley");
-  const [clickedFlag, setClickedFlag] = useState(false);
-  useEffect(() => {
-    console.log("useEffect called with " + clickedItem);
-    if (clickedItem) {
-      // Add the "clicked" class after a short delay (10ms) to trigger the transition
-      const timer = setTimeout(() => {
-        console.log("from within the useeffect ", clickedItem);
-        setClickedTitle(clickedItem);
-      }, 1000);
+  const [isMovingRight, setIsMovingRight] = useState(false);
 
-      // Clear the timer on unmount to avoid memory leaks
-      return () => clearTimeout(timer);
-    }
-  }, [clickedTitle]);
   let renderedHeading = heading.toUpperCase();
   let items = products?.filter((item) => item.category == heading);
   return (
@@ -47,9 +35,12 @@ const Category = ({
             foundProducts?.find(
               (foundProduct) => foundProduct.title === item.title
             )?.title
-              ? "found" + (clickedTitle === item.title ? " fadeIn" : "")
-              : "" + (clickedItem === item.title ? " fadeIn" : "")
+              ? "found moving-element" +
+                (clickedTitle === item.title ? " clicked-element" : "")
+              : "moving-element" +
+                (clickedItem === item.title ? " clicked-element" : "")
           }
+          //add some interactivity to the clicked element, to feedback to user that their click was registered
           style={{ cursor: "pointer" }}
           onClick={() => {
             handleClick(item);

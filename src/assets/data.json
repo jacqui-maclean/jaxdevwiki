@@ -104,12 +104,23 @@
     "category": "array"
   },
   {
-    "images": [],
+    "images": ["images/CallingTwoFunctionsOnClick.png"],
     "extraText": "",
-    "tags": ["arrayMethods", "array", "methods"],
-    "slug": "Array.map",
-    "title": "Array.map",
-    "category": "array"
+    "tags": [
+      "syntax",
+      "functions",
+      "function",
+      "calling",
+      "onClick",
+      "click",
+      "arrow",
+      "event",
+      "multiple",
+      "two"
+    ],
+    "slug": "callingTwoFunctionsOnClick",
+    "title": "Calling Two Functions onClick in an Arrow function",
+    "category": "functions"
   },
   {
     "images": [],
