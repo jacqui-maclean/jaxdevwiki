@@ -29,10 +29,8 @@ const Category = ({ products, foundProducts, heading, handleClick }: Props) => {
               //foundProducts?.find will return the whole item if there is a match
               (foundProduct) => foundProduct.title === item.title
             )?.title //then we extract the title with dot notation so we can match it to the item.title
-              ? "found soften-effect " +
-                (clickedProduct === item ? " bounce " : "unbounce")
-              : "soften-effect " +
-                (clickedProduct === item ? " bounce " : "unbounce")
+              ? "found " + (clickedProduct === item ? " glow " : "unglow")
+              : " " + (clickedProduct === item ? " glow " : "unglow")
           }
           //add some interactivity to the clicked element, to feedback to user that their click was registered
           style={{ cursor: "pointer" }}
