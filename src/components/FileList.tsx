@@ -10,7 +10,7 @@ interface Props {
   products: Product[];
   onClick: (product: Product) => void;
 }
-
+//TODO get rid of console error
 const FileList = ({ products, onClick }: Props) => {
   const [foundItems, setFoundItems] = useState<Product[]>();
   const [showModal, setShowModal] = useState(false);
@@ -97,6 +97,24 @@ const FileList = ({ products, onClick }: Props) => {
         <Card>
           <Category
             heading="variables"
+            products={products}
+            foundProducts={foundItems}
+            handleClick={onClick}
+            clickedItem={clickedItem}
+          />
+        </Card>
+        <Card>
+          <Category
+            heading="git"
+            products={products}
+            foundProducts={foundItems}
+            handleClick={onClick}
+            clickedItem={clickedItem}
+          />
+        </Card>
+        <Card>
+          <Category
+            heading="ssh"
             products={products}
             foundProducts={foundItems}
             handleClick={onClick}

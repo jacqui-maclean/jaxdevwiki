@@ -266,5 +266,93 @@
     "slug": "gettersAndSetters",
     "title": "Getters and Setters",
     "category": "objects"
+  },
+  {
+    "images": ["images/gitlabsetup1to4.jpg", "images/instruction5.jpg"],
+    "extraText": "",
+    "tags": ["git", "gitlab", "setup"],
+    "slug": "setup gitlab",
+    "title": "Setting up Gitlab",
+    "category": "git"
+  },
+  {
+    "images": ["images/hotfix.jpg"],
+    "extraText": "",
+    "tags": ["git", "hotfix"],
+    "slug": "makehotfix",
+    "title": "Making a hotfix",
+    "category": "git"
+  },
+  {
+    "images": ["images/CommitinTerminal.jpg"],
+    "extraText": "",
+    "tags": ["git", "commit", "terminal", "bash", "command"],
+    "slug": "commitInTerminal",
+    "title": "Commit from command line",
+    "category": "git"
+  },
+  {
+    "images": ["images/deployingvercel.jpg"],
+    "extraText": "If your changes do not appear after push, use the refresh button on the project from the Vercel dashboard",
+    "tags": ["git", "vercel", "deploy"],
+    "slug": "deployingvercel",
+    "title": "Deploy to Vercel",
+    "category": "git"
+  },
+  {
+    "images": ["images/makeRemoteRepo.jpg", "images/makeremote2.jpg"],
+    "extraText": "",
+    "tags": ["git", "remote", "repo", "commit", "terminal", "bash", "command"],
+    "slug": "makeRemoteRepo",
+    "title": "Make Remote Repo",
+    "category": "git"
+  },
+  {
+    "images": [
+      "images/replacessh1of2.jpg",
+      "images/ssh1.jpg",
+      "images/replacingsshkeys.jpg",
+      "images/ssh.jpg"
+    ],
+    "extraText": "",
+    "tags": ["ssh", "key", "github", "git"],
+    "slug": "ssh",
+    "title": "Replace SSH keys",
+    "category": "ssh"
+  },
+  {
+    "images": ["images/sshkeymismatch.jpg"],
+    "extraText": "",
+    "tags": ["ssh", "key", "github", "git"],
+    "slug": "sshkeymismatch",
+    "title": "Mismatching SSH keys",
+    "category": "ssh"
+  },
+  {
+    "images": [
+      "images/addsshkeypairtogithub.jpg",
+      "images/addingsshkeypair2.jpg"
+    ],
+    "extraText": "",
+    "tags": ["ssh", "key", "github", "git"],
+    "slug": "sshkeymismatch",
+    "title": "Add SSH keys to github",
+    "category": "ssh"
+  },
+  {
+    "images": ["images/sshkeysfindingfile.jpg"],
+    "extraText": "",
+    "tags": ["ssh", "key", "github", "git"],
+    "slug": "sshkeyfindingfile",
+    "title": "Finding SSH keys",
+    "category": "ssh"
+  },
+  {
+    "images": ["images/installingsshkeys.jpg"],
+    "extraText": "",
+    "tags": ["ssh", "key", "github", "git"],
+    "slug": "installsshkeys",
+    "title": "Installing SSH Keys",
+    "category": "ssh"
   }
 ]
