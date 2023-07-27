@@ -4,14 +4,11 @@ import SearchInput from "./SearchInput";
 import Category from "./Category/Category";
 import CardGrid from "./CardGrid";
 import Card from "./CardSimple";
-import Modal from "./Modal/Modal";
 
 interface Props {
-  //   products: Product[];
   onClick: (product: Product) => void;
   categories: Categories;
 }
-//TODO get rid of console error
 const FileList = ({ onClick, categories }: Props) => {
   const [foundItems, setFoundItems] = useState<Product[]>();
   const [showModal, setShowModal] = useState(false);
@@ -19,32 +16,25 @@ const FileList = ({ onClick, categories }: Props) => {
   const [clickedItem, setClickedItem] = useState<string>();
 
   const handleSearch = (searchTerm: string) => {
+    let searchResult: Product[] = [];
     for (const categoryKey in categories) {
-      const products = categories[categoryKey];
-      console.log(`Category: ${categoryKey}`);
-      let searchResult = products?.filter((item) =>
-        item.tags.includes(searchTerm)
-      );
-      if (searchResult.length > 0) {
-        setFoundItems(searchResult);
-      } else {
-        setFoundItems([]);
-      }
+      //for each array of products in categories
+      const products: Product[] = categories[categoryKey];
+      //check the array and if any matches are found, add them to the searchResult array
+      let results = products?.filter((item) => item.tags.includes(searchTerm));
+      searchResult = [...searchResult, ...results];
     }
-  };
-
-  const handleModal = (product: Product) => {
-    console.log("product is", product.title);
-    console.log("product images", product.images);
-    product.images.length > 0
-      ? (setShowModal(true), setSelectedProduct(product))
-      : setClickedItem(product.title);
+    if (searchResult.length > 0) {
+      setFoundItems(searchResult);
+    } else {
+      setFoundItems([]);
+    }
   };
 
   return (
     <>
       <SearchInput onSearch={handleSearch} />
-      <div className="d-flex flex-wrap justify-content-around align-items-center">
+      <div className=" foundItemsDiv d-flex flex-wrap justify-content-around align-items-center">
         {foundItems
           ? foundItems.map((product: Product) => {
               return (
@@ -61,31 +51,18 @@ const FileList = ({ onClick, categories }: Props) => {
           : null}
       </div>
       <CardGrid>
-        <div>
-          {Object.keys(categories).map((categoryName) => (
-            <div key={categoryName} className="identifier">
-              <h2>{categoryName}</h2>
-              <Card>
-                <Category
-                  products={categories[categoryName]}
-                  foundProducts={foundItems}
-                  handleClick={onClick}
-                  clickedItem={clickedItem}
-                />
-              </Card>
-            </div>
-          ))}
-        </div>
+        {Object.keys(categories).map((categoryName) => (
+          <Card key={categoryName}>
+            <Category
+              header={categoryName}
+              products={categories[categoryName]}
+              foundProducts={foundItems}
+              handleClick={onClick}
+              clickedItem={clickedItem}
+            />
+          </Card>
+        ))}
       </CardGrid>
-      <main>
-        <Modal
-          image={selectedProduct?.images[0]}
-          images={selectedProduct?.images}
-          extraText={selectedProduct?.extraText}
-          show={showModal}
-          handleClose={() => setShowModal(false)}
-        />
-      </main>
     </>
   );
 };

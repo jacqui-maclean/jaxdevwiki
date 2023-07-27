@@ -8,13 +8,15 @@ interface Props {
   foundProducts: Product[] | undefined;
   handleClick: (product: Product) => void;
   clickedItem: string | undefined;
+  header: string;
 }
 
-const Category = ({ products, foundProducts, handleClick }: Props) => {
+const Category = ({ products, foundProducts, handleClick, header }: Props) => {
   const [clickedProduct, setClickedProduct] = useState<Product | null>(null);
 
   return (
     <div className="card mt-9">
+      <h2 className="card-header">{header}</h2>
       {products?.map((item: Product) => (
         <div
           key={item.slug}

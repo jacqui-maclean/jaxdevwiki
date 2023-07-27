@@ -26,13 +26,8 @@ function App() {
   const [selectedSubject, setSelectedSubject] = useState<Product>();
 
   const handleClick = (product: Product) => {
-    console.log("from handleClick in App.tsx ", product.title);
-    if (product.images.length > 0) {
-      setPageType("detail");
-      setSelectedSubject(product);
-    } else {
-      console.log("no images for " + product.title);
-    }
+    product.images.length > 0 && setPageType("detail");
+    setSelectedSubject(product);
   };
 
   const handleSubjectClose = () => {
@@ -40,8 +35,7 @@ function App() {
   };
 
   return (
-    <div className="container">
-      {/* <CardList products={data} /> */}
+    <div className="identifier">
       {pageType === "list" ? (
         <FileList categories={data.categories} onClick={handleClick} />
       ) : (

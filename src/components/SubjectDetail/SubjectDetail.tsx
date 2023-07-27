@@ -21,8 +21,8 @@ const SubjectDetail = ({ selectedSubject, onSubjectClose }: Props) => {
         </div>
         <h3 style={{ color: "#adb5bd" }}>{selectedSubject?.title}</h3>;
         <p style={{ color: "#adb5bd" }}>{selectedSubject?.extraText}</p>
-        {selectedSubject?.images.map((img) => (
-          <img src={img} />
+        {selectedSubject?.images.map((img, index) => (
+          <img key={index} src={img} />
         ))}
       </div>
     </>

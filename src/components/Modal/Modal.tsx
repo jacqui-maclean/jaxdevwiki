@@ -17,13 +17,13 @@ const Modal = ({ handleClose, show, image, images, extraText }: Props) => {
   return (
     <div style={{ zIndex: "3" }} className={showHideClassName}>
       <section className="customModal-main gradientModal">
-        <div content-container>
+        {/* <div content-container>
           {images?.map((img) => (
             <img src={img} />
           ))}
           <p className="nocomp">{extraText}</p>
           {extraText ? <p>{extraText}</p> : null}
-        </div>
+        </div> */}
 
         <button type="button" onClick={handleClose} className="btn btn-primary">
           Close
