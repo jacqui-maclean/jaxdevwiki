@@ -35,7 +35,7 @@ function App() {
     setPageType("list");
   };
 
-  const handlePageSelect = (subject: string) => {
+  const handlePageSelect = (subject: string | null) => {
     subject === "index" ? setPageType("list") : setPageType("detail");
     console.log("subject: ", subject);
   };
