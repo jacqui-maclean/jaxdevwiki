@@ -11,8 +11,6 @@ interface Props {
 }
 const FileList = ({ onClick, categories }: Props) => {
   const [foundItems, setFoundItems] = useState<Product[]>();
-  const [showModal, setShowModal] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState<Product>();
   const [clickedItem, setClickedItem] = useState<string>();
 
   const handleSearch = (searchTerm: string) => {

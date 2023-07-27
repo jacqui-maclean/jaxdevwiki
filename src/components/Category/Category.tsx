@@ -30,7 +30,7 @@ const Category = ({ products, foundProducts, handleClick, header }: Props) => {
               ? "found " + (clickedProduct === item ? " glow " : "unglow")
               : " " + (clickedProduct === item ? " glow " : "unglow")
           }
-          //add some interactivity to the clicked element, to feedback to user that their click was registered
+          //add some interactivity to the clicked element, to feedback to user that their click was registered even though there is no data to display
           style={{ cursor: "pointer" }}
           onClick={() => {
             handleClick(item);

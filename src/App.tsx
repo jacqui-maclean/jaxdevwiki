@@ -3,6 +3,7 @@ import data from "./assets/data.json";
 import "./App.css";
 import SubjectDetail from "./components/SubjectDetail/SubjectDetail";
 import FileList from "./components/FileList";
+import NavBar from "./components/NavBar/NavBar";
 
 interface Data {
   data: Categories;
@@ -26,25 +27,39 @@ function App() {
   const [selectedSubject, setSelectedSubject] = useState<Product>();
 
   const handleClick = (product: Product) => {
-    product.images.length > 0 && setPageType("detail");
-    setSelectedSubject(product);
+    product.images.length > 0 &&
+      (setPageType("detail"), setSelectedSubject(product));
   };
 
   const handleSubjectClose = () => {
     setPageType("list");
   };
 
+  const handlePageSelect = (subject: string) => {
+    subject === "index" ? setPageType("list") : setPageType("detail");
+    console.log("subject: ", subject);
+  };
+
+  let subject: string | null = selectedSubject ? selectedSubject.title : null;
   return (
-    <div className="identifier">
-      {pageType === "list" ? (
-        <FileList categories={data.categories} onClick={handleClick} />
-      ) : (
-        <SubjectDetail
-          selectedSubject={selectedSubject}
-          onSubjectClose={handleSubjectClose}
-        />
-      )}
-    </div>
+    <>
+      <NavBar onPageSelect={handlePageSelect} selectedSubject={subject} />
+      <div
+        style={{
+          padding: "15px",
+          boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+        }}
+      >
+        {pageType === "list" ? (
+          <FileList categories={data.categories} onClick={handleClick} />
+        ) : (
+          <SubjectDetail
+            selectedSubject={selectedSubject}
+            onSubjectClose={handleSubjectClose}
+          />
+        )}
+      </div>
+    </>
   );
 }
 

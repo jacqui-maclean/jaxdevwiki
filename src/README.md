@@ -18,7 +18,7 @@ Have made the beginning of the JS data and put it in assets/data
 
 3 days later - I now have the data displayed how I want it. It is categorised into objects,array,function,variables, and can easily be extended to cover the further categories.
 
-I would like eventually to have a dynamic navbar that looks like file tabs, I could do this by having an array that each selected item id gets sent to, so that should the link on the tab get clicked then that page can be built.
+****\*\*\*****I would like eventually to have a dynamic navbar that looks like file tabs, I could do this by having an array that each selected item id gets sent to, so that should the link on the tab get clicked then that page can be built.****\*\*\*\*****
 
 I want to look into hosting the data remotely-poss making an api.
 
