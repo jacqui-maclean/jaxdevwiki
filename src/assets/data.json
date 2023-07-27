@@ -2,6 +2,73 @@
   "categories": {
     "objects": [
       {
+        "images": ["images/constructorAndFactoryFunctions.jpg"],
+        "extraText": "",
+        "tags": ["object", "constructor", "factory", "functions"],
+        "slug": "objectConstructor",
+        "title": "Object Constructor",
+        "category": "objects"
+      },
+      {
+        "images": [],
+        "extraText": "",
+        "tags": ["function", "getters", "setters", "functions", "object"],
+        "slug": "gettersAndSetters",
+        "title": "Getters and Setters",
+        "category": "objects"
+      },
+      {
+        "images": [],
+        "extraText": "",
+        "tags": ["factory", "objectCreation", "function"],
+        "slug": "factory",
+        "title": "Object Factory Functions",
+        "category": "objects"
+      },
+      {
+        "images": [],
+        "extraText": "",
+        "tags": ["constructor", "object", "function"],
+        "slug": "constructor",
+        "title": "Object Constructor Functions",
+        "category": "objects"
+      },
+
+      {
+        "images": [],
+        "extraText": "This when you literally write out the object",
+        "tags": ["objectCreation", "object", "literal"],
+        "slug": "objectLiteral",
+        "title": "Object Literal",
+        "category": "objects"
+      },
+
+      {
+        "images": ["images/objectEntries.jpg"],
+        "extraText": "converts each property in an object into an key/value array",
+        "tags": [
+          "object",
+          "methods",
+          "entries",
+          "objectMethods",
+          "loops",
+          "looping",
+          "for-in",
+          "loop"
+        ],
+        "slug": "objectEntries",
+        "title": "Object Entries",
+        "category": "objects"
+      },
+      {
+        "images": [],
+        "extraText": "",
+        "tags": ["loops", "loops", "looping", "object", "array"],
+        "slug": "loopsArrayVSObjects",
+        "title": "Compare looping over Objects with Looping over Arrays",
+        "category": "objects"
+      },
+      {
         "images": ["images/cloningObjects.jpg"],
         "extraText": "",
         "tags": ["cloning", "clone", "object"],
@@ -15,6 +82,38 @@
         "tags": ["variables", "value", "reference", "types", "primitive"],
         "slug": "valueVSreference",
         "title": "Primitive/Value Types vs Reference Types",
+        "category": "objects"
+      },
+      {
+        "images": ["images/cloningObjects.jpg"],
+        "extraText": "",
+        "tags": ["cloning", "clone", "object"],
+        "slug": "cloning",
+        "title": "Cloning",
+        "category": "objects"
+      },
+      {
+        "images": ["images/valueVSreferenceTypes.jpg"],
+        "extraText": "",
+        "tags": ["variables", "value", "reference", "types", "primitive"],
+        "slug": "valueVSreference",
+        "title": "Primitive/Value Types vs Reference Types",
+        "category": "objects"
+      },
+      {
+        "images": ["images/objectsOverview.jpg"],
+        "extraText": "",
+        "tags": ["variables", "object", "objects"],
+        "slug": "objectOverview",
+        "title": "Objects overview",
+        "category": "objects"
+      },
+      {
+        "images": ["images/loopingThruAnObject.jpg"],
+        "extraText": "",
+        "tags": ["loops", "loops", "object", "looping"],
+        "slug": "loops",
+        "title": "Looping over Objects",
         "category": "objects"
       }
     ],
@@ -42,6 +141,363 @@
         "slug": "tryCatch",
         "title": "Error Handling - Try/Catch blocks",
         "category": "functions"
+      },
+      {
+        "images": ["images/twoFuncsInTernaryCondition.png"],
+        "extraText": "Wrap the two functions in braces and comma separate them",
+        "tags": ["ternary", "two", "functions", "function", "syntax"],
+        "slug": "combinedFunctionInTernary",
+        "title": "How to call two functions in a ternary condition",
+        "category": "functions"
+      },
+      {
+        "images": ["images/FunctionArgumentObject.jpg"],
+        "extraText": "",
+        "tags": ["function", "argument", "functions"],
+        "slug": "argumentObject",
+        "title": "The argument object",
+        "category": "functions"
+      },
+      {
+        "images": ["images/errorHandlingTryCatch.jpg"],
+        "extraText": "",
+        "tags": [
+          "function",
+          "error-handling",
+          "try",
+          "catch",
+          "error",
+          "handling",
+          "functions"
+        ],
+        "slug": "tryCatch",
+        "title": "Error Handling - Try/Catch blocks",
+        "category": "functions"
+      },
+      {
+        "images": ["images/arrowFunctionsAndThis.jpg"],
+        "extraText": "",
+        "tags": ["arrow", "functions", "this"],
+        "slug": "arrow-function",
+        "title": "Arrow Functions and This",
+        "category": "functions"
+      },
+      {
+        "images": ["images/functionDeclarationVSexpressions.jpg"],
+        "extraText": "",
+        "tags": ["function", "declaration", "expression", "functions"],
+        "slug": "declarationAndExpression",
+        "title": "Function Declarations and Expressions",
+        "category": "functions"
+      },
+      {
+        "images": ["images/Hoisting.jpg"],
+        "extraText": "",
+        "tags": ["function", "hoisting", "functions"],
+        "slug": "hoisting",
+        "title": "Hoisting",
+        "category": "functions"
+      },
+      {
+        "images": ["images/functionDefaultParameters.jpg"],
+        "extraText": "",
+        "tags": ["function", "default", "parameters", "params", "functions"],
+        "slug": "defaultParams",
+        "title": "Default Parameters",
+        "category": "functions"
+      },
+
+      {
+        "images": ["images/arrowFunctionsAndThis.jpg"],
+        "extraText": "",
+        "tags": ["arrow", "functions", "this"],
+        "slug": "arrow-function",
+        "title": "Arrow Functions and This",
+        "category": "functions"
+      },
+      {
+        "images": ["images/functionDeclarationVSexpressions.jpg"],
+        "extraText": "",
+        "tags": ["function", "declaration", "expression", "functions"],
+        "slug": "declarationAndExpression",
+        "title": "Function Declarations and Expressions",
+        "category": "functions"
+      },
+      {
+        "images": ["images/Hoisting.jpg"],
+        "extraText": "",
+        "tags": ["function", "hoisting", "functions"],
+        "slug": "hoisting",
+        "title": "Hoisting",
+        "category": "functions"
+      },
+      {
+        "images": ["images/functionDefaultParameters.jpg"],
+        "extraText": "",
+        "tags": ["function", "default", "parameters", "params", "functions"],
+        "slug": "defaultParams",
+        "title": "Default Parameters",
+        "category": "functions"
+      },
+      {
+        "images": ["images/CallingTwoFunctionsOnClick.png"],
+        "extraText": "",
+        "tags": [
+          "syntax",
+          "functions",
+          "function",
+          "calling",
+          "onClick",
+          "click",
+          "arrow",
+          "event",
+          "multiple",
+          "two"
+        ],
+        "slug": "callingTwoFunctionsOnClick",
+        "title": "Calling Two Functions onClick in an Arrow function",
+        "category": "functions"
+      },
+      {
+        "images": [
+          "images/cssTransformonClickCss.png",
+          "images/CssTransformOnClickJSX.png"
+        ],
+        "extraText": "",
+        "tags": [
+          "css",
+          "transform",
+          "animate",
+          "animation",
+          "onClick",
+          "click",
+          "transformations",
+          "transition"
+        ],
+        "slug": "CssTransformOnClick",
+        "title": "CSS Transform on Click, bounce/fade",
+        "category": "functions"
+      }
+    ],
+    "array": [
+      {
+        "images": ["images/arrayFilter.jpg"],
+        "extraText": "in the example below - myArray is NOT mutated",
+        "tags": ["arrayMethods", "array", "methods", "filter"],
+        "slug": "Array.filter",
+        "title": "Array.filter",
+        "category": "array"
+      },
+
+      {
+        "images": [],
+        "extraText": "",
+        "tags": ["arrayMethods", "array", "methods"],
+        "slug": "Array.every",
+        "title": "Array.every",
+        "category": "array"
+      },
+      {
+        "images": [],
+        "extraText": "",
+        "tags": ["arrayMethods", "array", "methods"],
+        "slug": "Array.some",
+        "title": "Array.some",
+        "category": "array"
+      },
+      {
+        "images": ["images/ArrayFind1a.png", "images/arrayFind.png"],
+        "extraText": "Using find to check whether a matching element exists in an array, and returning that element if it does",
+        "tags": ["arrayMethods", "array", "methods", "find"],
+        "slug": "Array.find",
+        "title": "Array.find",
+        "category": "array"
+      },
+
+      {
+        "images": ["images/arrayReduce.jpg"],
+        "extraText": "",
+        "tags": ["arrayMethods", "array", "methods", "reduce"],
+        "slug": "Array.reduce",
+        "title": "Array.reduce",
+        "category": "array"
+      },
+      {
+        "images": ["images/arraySort.jpg"],
+        "extraText": "",
+        "tags": ["arrayMethods", "array", "methods", "sort"],
+        "slug": "Array.sort",
+        "title": "Array.sort",
+        "category": "array"
+      },
+
+      {
+        "images": ["images/arrayFilter.jpg"],
+        "extraText": "in the example below - myArray is NOT mutated",
+        "tags": ["arrayMethods", "array", "methods", "filter"],
+        "slug": "Array.filter",
+        "title": "Array.filter",
+        "category": "array"
+      },
+
+      {
+        "images": [],
+        "extraText": "",
+        "tags": ["arrayMethods", "array", "methods"],
+        "slug": "Array.every",
+        "title": "Array.every",
+        "category": "array"
+      },
+      {
+        "images": [],
+        "extraText": "",
+        "tags": ["arrayMethods", "array", "methods"],
+        "slug": "Array.some",
+        "title": "Array.some",
+        "category": "array"
+      },
+      {
+        "images": ["images/ArrayFind1a.png", "images/arrayFind.png"],
+        "extraText": "Using find to check whether a matching element exists in an array, and returning that element if it does",
+        "tags": ["arrayMethods", "array", "methods", "find"],
+        "slug": "Array.find",
+        "title": "Array.find",
+        "category": "array"
+      },
+
+      {
+        "images": ["images/arrayReduce.jpg"],
+        "extraText": "",
+        "tags": ["arrayMethods", "array", "methods", "reduce"],
+        "slug": "Array.reduce",
+        "title": "Array.reduce",
+        "category": "array"
+      },
+      {
+        "images": ["images/arraySort.jpg"],
+        "extraText": "",
+        "tags": ["arrayMethods", "array", "methods", "sort"],
+        "slug": "Array.sort",
+        "title": "Array.sort",
+        "category": "array"
+      }
+    ],
+    "variables": [
+      {
+        "images": ["images/diffsBetweenVarLetConst.jpg"],
+        "extraText": "",
+        "tags": ["variables", "var", "let", "const"],
+        "slug": "primitives",
+        "title": "Diff between var, let and const",
+        "category": "variables"
+      },
+      {
+        "images": [],
+        "extraText": "",
+        "tags": ["variables", "object"],
+        "slug": "reference",
+        "title": "Reference Types",
+        "category": "variables"
+      }
+    ],
+    "ssh": [
+      {
+        "images": [
+          "images/replacessh1of2.jpg",
+          "images/ssh1.jpg",
+          "images/replacingsshkeys.jpg",
+          "images/ssh.jpg"
+        ],
+        "extraText": "",
+        "tags": ["ssh", "key", "github", "git"],
+        "slug": "ssh",
+        "title": "Replace SSH keys",
+        "category": "ssh"
+      },
+      {
+        "images": ["images/sshkeymismatch.jpg"],
+        "extraText": "",
+        "tags": ["ssh", "key", "github", "git"],
+        "slug": "sshkeymismatch",
+        "title": "Mismatching SSH keys",
+        "category": "ssh"
+      },
+      {
+        "images": [
+          "images/addsshkeypairtogithub.jpg",
+          "images/addingsshkeypair2.jpg"
+        ],
+        "extraText": "",
+        "tags": ["ssh", "key", "github", "git"],
+        "slug": "sshkeymismatch",
+        "title": "Add SSH keys to github",
+        "category": "ssh"
+      },
+      {
+        "images": ["images/sshkeysfindingfile.jpg"],
+        "extraText": "",
+        "tags": ["ssh", "key", "github", "git"],
+        "slug": "sshkeyfindingfile",
+        "title": "Finding SSH keys",
+        "category": "ssh"
+      },
+      {
+        "images": ["images/installingsshkeys.jpg"],
+        "extraText": "",
+        "tags": ["ssh", "key", "github", "git"],
+        "slug": "installsshkeys",
+        "title": "Installing SSH Keys",
+        "category": "ssh"
+      }
+    ],
+    "git": [
+      {
+        "images": ["images/gitlabsetup1to4.jpg", "images/instruction5.jpg"],
+        "extraText": "",
+        "tags": ["git", "gitlab", "setup"],
+        "slug": "setup gitlab",
+        "title": "Setting up Gitlab",
+        "category": "git"
+      },
+      {
+        "images": ["images/hotfix.jpg"],
+        "extraText": "",
+        "tags": ["git", "hotfix"],
+        "slug": "makehotfix",
+        "title": "Making a hotfix",
+        "category": "git"
+      },
+      {
+        "images": ["images/CommitinTerminal.jpg"],
+        "extraText": "",
+        "tags": ["git", "commit", "terminal", "bash", "command"],
+        "slug": "commitInTerminal",
+        "title": "Commit from command line",
+        "category": "git"
+      },
+      {
+        "images": ["images/deployingvercel.jpg"],
+        "extraText": "If your changes do not appear after push, use the refresh button on the project from the Vercel dashboard",
+        "tags": ["git", "vercel", "deploy"],
+        "slug": "deployingvercel",
+        "title": "Deploy to Vercel",
+        "category": "git"
+      },
+      {
+        "images": ["images/makeRemoteRepo.jpg", "images/makeremote2.jpg"],
+        "extraText": "",
+        "tags": [
+          "git",
+          "remote",
+          "repo",
+          "commit",
+          "terminal",
+          "bash",
+          "command"
+        ],
+        "slug": "makeRemoteRepo",
+        "title": "Make Remote Repo",
+        "category": "git"
       }
     ]
   }
