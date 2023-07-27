@@ -6,10 +6,10 @@ import CardGrid from "./CardGrid";
 import Card from "./CardSimple";
 
 interface Props {
-  onClick: (product: Product) => void;
+  handleSubjectSelect: (product: Product) => void;
   categories: Categories;
 }
-const FileList = ({ onClick, categories }: Props) => {
+const FileList = ({ handleSubjectSelect, categories }: Props) => {
   const [foundItems, setFoundItems] = useState<Product[]>();
   const [clickedItem, setClickedItem] = useState<string>();
 
@@ -55,7 +55,7 @@ const FileList = ({ onClick, categories }: Props) => {
               header={categoryName}
               products={categories[categoryName]}
               foundProducts={foundItems}
-              handleClick={onClick}
+              onSubjectSelect={handleSubjectSelect}
               clickedItem={clickedItem}
             />
           </Card>

@@ -13,3 +13,7 @@
   /* For older browsers that don't support gradients, you can add a fallback background color */
   background-color: #040304f6;
 }
+.navigation-bar {
+  padding: "15px";
+  box-shadow: "0 2px 4px rgba(0, 0, 0, 0.2)";
+}

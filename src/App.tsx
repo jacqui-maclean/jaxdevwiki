@@ -26,7 +26,7 @@ function App() {
   const [pageType, setPageType] = useState("list");
   const [selectedSubject, setSelectedSubject] = useState<Product>();
 
-  const handleClick = (product: Product) => {
+  const onSubjectSelection = (product: Product) => {
     product.images.length > 0 &&
       (setPageType("detail"), setSelectedSubject(product));
   };
@@ -41,17 +41,16 @@ function App() {
   };
 
   let subject: string | null = selectedSubject ? selectedSubject.title : null;
+
   return (
     <>
       <NavBar onPageSelect={handlePageSelect} selectedSubject={subject} />
-      <div
-        style={{
-          padding: "15px",
-          boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
-        }}
-      >
+      <div className="navigation-bar">
         {pageType === "list" ? (
-          <FileList categories={data.categories} onClick={handleClick} />
+          <FileList
+            categories={data.categories}
+            handleSubjectSelect={onSubjectSelection}
+          />
         ) : (
           <SubjectDetail
             selectedSubject={selectedSubject}

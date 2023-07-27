@@ -52,13 +52,6 @@ const ProductCard = ({ product }: Props) => {
           {advisory}
         </p>
       </div>
-      <main>
-        <Modal
-          image={images[0]}
-          show={showModal}
-          handleClose={() => setShowModal(false)}
-        />
-      </main>
     </div>
   );
 };

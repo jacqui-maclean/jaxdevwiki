@@ -6,12 +6,17 @@ import { useState } from "react";
 interface Props {
   products: Product[];
   foundProducts: Product[] | undefined;
-  handleClick: (product: Product) => void;
+  onSubjectSelect: (product: Product) => void;
   clickedItem: string | undefined;
   header: string;
 }
 
-const Category = ({ products, foundProducts, handleClick, header }: Props) => {
+const Category = ({
+  products,
+  foundProducts,
+  onSubjectSelect,
+  header,
+}: Props) => {
   const [clickedProduct, setClickedProduct] = useState<Product | null>(null);
 
   return (
@@ -33,7 +38,7 @@ const Category = ({ products, foundProducts, handleClick, header }: Props) => {
           //add some interactivity to the clicked element, to feedback to user that their click was registered even though there is no data to display
           style={{ cursor: "pointer" }}
           onClick={() => {
-            handleClick(item);
+            onSubjectSelect(item);
             setClickedProduct(item);
             // Remove the "clicked" class after a short delay (500ms)
             setTimeout(() => {
