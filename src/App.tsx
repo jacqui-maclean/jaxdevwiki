@@ -5,8 +5,9 @@ import SubjectDetail from "./components/SubjectDetail/SubjectDetail";
 import FileList from "./components/FileList";
 
 interface Data {
-  data: Product[];
+  data: Categories;
 }
+
 export interface Product {
   images: string[];
   extraText: string;
@@ -14,6 +15,10 @@ export interface Product {
   slug: string;
   title: string;
   category: string;
+}
+
+export interface Categories {
+  [key: string]: Product[];
 }
 
 function App() {
@@ -38,7 +43,7 @@ function App() {
     <div className="container">
       {/* <CardList products={data} /> */}
       {pageType === "list" ? (
-        <FileList products={data} onClick={handleClick} />
+        <FileList categories={data.categories} onClick={handleClick} />
       ) : (
         <SubjectDetail
           selectedSubject={selectedSubject}

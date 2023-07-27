@@ -21,3 +21,5 @@ Have made the beginning of the JS data and put it in assets/data
 I would like eventually to have a dynamic navbar that looks like file tabs, I could do this by having an array that each selected item id gets sent to, so that should the link on the tab get clicked then that page can be built.
 
 I want to look into hosting the data remotely-poss making an api.
+
+The data is getting unwieldly as it grows, have decided to split it into category arrays, this should clean up the jsx too as then the categories can display dynamically rather than being hard coded.

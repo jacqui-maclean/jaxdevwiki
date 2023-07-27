@@ -6,20 +6,16 @@ import { useState } from "react";
 interface Props {
   products: Product[];
   foundProducts: Product[] | undefined;
-  heading: string;
   handleClick: (product: Product) => void;
   clickedItem: string | undefined;
 }
 
-const Category = ({ products, foundProducts, heading, handleClick }: Props) => {
+const Category = ({ products, foundProducts, handleClick }: Props) => {
   const [clickedProduct, setClickedProduct] = useState<Product | null>(null);
 
-  let renderedHeading = heading.toUpperCase();
-  let items = products?.filter((item) => item.category == heading);
   return (
     <div className="card mt-9">
-      <div>{renderedHeading}</div>
-      {items?.map((item: Product) => (
+      {products?.map((item: Product) => (
         <div
           key={item.slug}
           //check to see if the item is in the foundProducts array
