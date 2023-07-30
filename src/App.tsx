@@ -28,10 +28,11 @@ function App() {
   const [selectedSubjects, setSelectedSubjects] = useState<Product[]>([]);
 
   const onAddTabbedPage = (product: Product) => {
-    product.images.length > 0 &&
-      (setPageType("detail"),
-      setSelectedSubject(product),
-      setSelectedSubjects([...selectedSubjects, product])); //**add to the array
+    product.images.length > 0 && !selectedSubjects.includes(product)
+      ? (setPageType("detail"),
+        setSelectedSubject(product),
+        setSelectedSubjects([...selectedSubjects, product]))
+      : null;
   };
 
   const handleCallIndex = () => {
