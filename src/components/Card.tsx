@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { Product } from "../App";
-import Modal from "./Modal/Modal";
-import CustomImage from "./CustomImage";
 
 interface Props {
   product: Product;
@@ -22,13 +20,6 @@ const ProductCard = ({ product }: Props) => {
       <div className="card-body">
         <p className="card-text">{title}</p>
       </div>
-      <main>
-        <Modal
-          image={images[0]}
-          show={showModal}
-          handleClose={() => setShowModal(false)}
-        />
-      </main>
     </div>
   );
 };
