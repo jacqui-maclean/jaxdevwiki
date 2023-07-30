@@ -24,10 +24,10 @@ export interface Categories {
 
 function App() {
   const [pageType, setPageType] = useState("list");
-  const [selectedSubject, setSelectedSubject] = useState<Product | null>();
+  const [selectedSubject, setSelectedSubject] = useState<Product | null>(null);
   const [selectedSubjects, setSelectedSubjects] = useState<Product[]>([]);
 
-  const onSubjectSelection = (product: Product) => {
+  const onAddTabbedPage = (product: Product) => {
     product.images.length > 0 &&
       (setPageType("detail"),
       setSelectedSubject(product),
@@ -37,33 +37,17 @@ function App() {
   const handleCallIndex = () => {
     setPageType("list");
   };
-  const handleClosePage = (product: Product | undefined) => {
-    setPageType("list");
-    const filteredArray = selectedSubjects.filter((item) => product !== item);
-    setSelectedSubjects(filteredArray);
-    setSelectedSubject(null);
-  };
-  const handleCloseTab = (
-    event: React.MouseEvent<SVGElement, MouseEvent>,
-    product: Product | undefined
-  ) => {
-    event.stopPropagation();
 
+  const removeTabbedPage = (product: Product) => {
     let originalIndex = selectedSubjects.findIndex(
       (item) => item.slug === product?.slug
     );
-    console.log("selectedSubjects.length ", selectedSubjects.length);
-    console.log("originalIndex", originalIndex);
-    // then we need to set the new selectedSubject to the one ahead of it
-    //BUG when there are two items in the array and index0 is deleted then we get undefined in selected subjects
-    //and the 'list' pageType is set.
-    let newIndex;
-    if (originalIndex + 1 == selectedSubjects.length) {
-      newIndex = originalIndex - 1;
-    } else {
-      newIndex = originalIndex + 1;
-    }
-    console.log("newIndex", newIndex);
+    //if its the last in the array then we need to go back one
+    let newIndex =
+      originalIndex + 1 == selectedSubjects.length
+        ? originalIndex - 1
+        : originalIndex + 1;
+
     if (newIndex !== -1) {
       setSelectedSubject(selectedSubjects[newIndex]);
     } else {
@@ -75,8 +59,18 @@ function App() {
     setSelectedSubjects(filteredArray);
   };
 
+  const handleClosePage = (product: Product) => {
+    removeTabbedPage(product);
+  };
+  const handleCloseTab = (
+    event: React.MouseEvent<SVGElement, MouseEvent>,
+    product: Product
+  ) => {
+    event.stopPropagation();
+    removeTabbedPage(product);
+  };
+
   const handleNavBarClick = (product: Product | undefined) => {
-    console.log("handleNavBarClick called");
     setPageType("detail");
     product &&
       (setSelectedSubject(product),
@@ -96,7 +90,7 @@ function App() {
       {pageType === "list" ? (
         <FileList
           categories={data.categories}
-          handleSubjectSelect={onSubjectSelection}
+          handleSubjectSelect={onAddTabbedPage}
         />
       ) : (
         <SubjectDetail

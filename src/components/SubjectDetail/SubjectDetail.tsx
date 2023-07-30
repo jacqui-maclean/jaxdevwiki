@@ -7,9 +7,9 @@ import { SlArrowLeft } from "react-icons/sl"; //
 import "./SubjectDetail.css";
 
 interface Props {
-  selectedSubject: Product | undefined | null;
+  selectedSubject: Product | null;
   onCallIndex: () => void;
-  onClosePage: (product: Product | undefined) => void;
+  onClosePage: (product: Product) => void;
 }
 
 const SubjectDetail = ({
