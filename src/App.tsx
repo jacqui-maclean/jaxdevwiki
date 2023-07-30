@@ -48,12 +48,24 @@ function App() {
     product: Product | undefined
   ) => {
     event.stopPropagation();
+
     let originalIndex = selectedSubjects.findIndex(
       (item) => item.slug === product?.slug
     );
+    console.log("selectedSubjects.length ", selectedSubjects.length);
+    console.log("originalIndex", originalIndex);
     // then we need to set the new selectedSubject to the one ahead of it
-    if (selectedSubjects.length > 1) {
-      setSelectedSubject(selectedSubjects[originalIndex + 1]);
+    //BUG when there are two items in the array and index0 is deleted then we get undefined in selected subjects
+    //and the 'list' pageType is set.
+    let newIndex;
+    if (originalIndex + 1 == selectedSubjects.length) {
+      newIndex = originalIndex - 1;
+    } else {
+      newIndex = originalIndex + 1;
+    }
+    console.log("newIndex", newIndex);
+    if (newIndex !== -1) {
+      setSelectedSubject(selectedSubjects[newIndex]);
     } else {
       setSelectedSubject(null);
       setPageType("list");
