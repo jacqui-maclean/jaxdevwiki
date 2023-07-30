@@ -48,12 +48,19 @@ function App() {
     product: Product | undefined
   ) => {
     event.stopPropagation();
-    console.log("handleClosePage called");
-    setPageType("list");
-    //remove the selected product from the array of selected products
+    let originalIndex = selectedSubjects.findIndex(
+      (item) => item.slug === product?.slug
+    );
+    // then we need to set the new selectedSubject to the one ahead of it
+    if (selectedSubjects.length > 1) {
+      setSelectedSubject(selectedSubjects[originalIndex + 1]);
+    } else {
+      setSelectedSubject(null);
+      setPageType("list");
+    }
+    //then we need to remove the product from the array
     const filteredArray = selectedSubjects.filter((item) => product !== item);
     setSelectedSubjects(filteredArray);
-    setSelectedSubject(null);
   };
 
   const handleNavBarClick = (product: Product | undefined) => {
