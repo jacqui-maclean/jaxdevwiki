@@ -1,0 +1,7 @@
+.icon-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 3rem;
+}

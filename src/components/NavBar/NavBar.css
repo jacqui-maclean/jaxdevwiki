@@ -1,4 +1,5 @@
 .navbar-item {
+  position: relative;
   font-size: 1.2rem;
   font-weight: 600;
   color: #0c0a0a;
@@ -10,4 +11,11 @@
   border-top: solid 1px grey;
   border-right: solid 1px grey;
   border-left: solid 1px grey;
+}
+.close-button {
+  position: absolute;
+  top: -6px;
+  right: 1px;
+  color: black;
+  font-weight: lighter;
 }

@@ -24,7 +24,7 @@ export interface Categories {
 
 function App() {
   const [pageType, setPageType] = useState("list");
-  const [selectedSubject, setSelectedSubject] = useState<Product>();
+  const [selectedSubject, setSelectedSubject] = useState<Product | null>();
   const [selectedSubjects, setSelectedSubjects] = useState<Product[]>([]);
 
   const onSubjectSelection = (product: Product) => {
@@ -39,49 +39,53 @@ function App() {
   };
   const handleClosePage = (product: Product | undefined) => {
     setPageType("list");
+    const filteredArray = selectedSubjects.filter((item) => product !== item);
+    setSelectedSubjects(filteredArray);
+    setSelectedSubject(null);
+  };
+  const handleCloseTab = (
+    event: React.MouseEvent<SVGElement, MouseEvent>,
+    product: Product | undefined
+  ) => {
+    event.stopPropagation();
+    console.log("handleClosePage called");
+    setPageType("list");
     //remove the selected product from the array of selected products
     const filteredArray = selectedSubjects.filter((item) => product !== item);
     setSelectedSubjects(filteredArray);
+    setSelectedSubject(null);
   };
-  //just the title of the selected subject is passed in
+
   const handleNavBarClick = (product: Product | undefined) => {
+    console.log("handleNavBarClick called");
     setPageType("detail");
     product &&
       (setSelectedSubject(product),
-      //we need to check if this product is already in the array of selectedItems
-      //if it is, then we don't want to add it again
-      //if it is not, then we want to add it
       selectedSubjects.includes(product)
         ? null
-        : setSelectedSubjects([...selectedSubjects, product])); //**if there is a product that is not already in the array then add to the array
+        : setSelectedSubjects([...selectedSubjects, product])); //**if this is a product that is not already in the array then add to the array
   };
-
-  //currently we pass in the just the title of the one selected subject
-  //we will need to pass in an array of titles, so that we can have multiple subjects selected
-  //so here we will be pushing to an array in state called selectedSubjects
 
   return (
     <>
       <NavBar
         onNavClick={handleNavBarClick}
-        selectedSubject={selectedSubject}
         onIndexClick={() => setPageType("list")}
         selectedSubjects={selectedSubjects}
+        onCloseTab={handleCloseTab}
       />
-      <div className="navigation-bar">
-        {pageType === "list" ? (
-          <FileList
-            categories={data.categories}
-            handleSubjectSelect={onSubjectSelection}
-          />
-        ) : (
-          <SubjectDetail
-            selectedSubject={selectedSubject}
-            onCallIndex={handleCallIndex}
-            onClosePage={handleClosePage}
-          />
-        )}
-      </div>
+      {pageType === "list" ? (
+        <FileList
+          categories={data.categories}
+          handleSubjectSelect={onSubjectSelection}
+        />
+      ) : (
+        <SubjectDetail
+          selectedSubject={selectedSubject}
+          onCallIndex={handleCallIndex}
+          onClosePage={handleClosePage}
+        />
+      )}
     </>
   );
 }
