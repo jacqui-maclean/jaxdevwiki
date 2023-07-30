@@ -20,26 +20,24 @@ const SubjectDetail = ({
   return (
     selectedSubject && (
       <>
-        <div className="bg">
-          <div className="icon-wrapper">
-            <SlArrowLeft
-              color="white"
-              size="1.75rem"
-              onClick={onCallIndex}
-              style={{ paddingTop: "4px" }}
-            />
-            <AiOutlineClose
-              color="white"
-              size="2rem"
-              onClick={() => onClosePage(selectedSubject)}
-            />
-          </div>
-          <h3 style={{ color: "#adb5bd" }}>{selectedSubject?.title}</h3>;
-          <p style={{ color: "#adb5bd" }}>{selectedSubject?.extraText}</p>
-          {selectedSubject?.images.map((img, index) => (
-            <img key={index} src={img} alt={`Image ${index}`} />
-          ))}
+        <div className="icon-wrapper">
+          <SlArrowLeft
+            color="black"
+            size="1.75rem"
+            onClick={onCallIndex}
+            style={{ paddingTop: "4px" }}
+          />
+          <AiOutlineClose
+            color="black"
+            size="2rem"
+            onClick={() => onClosePage(selectedSubject)}
+          />
         </div>
+        <h3 style={{ color: "#adb5bd" }}>{selectedSubject?.title}</h3>
+        <p style={{ color: "#adb5bd" }}>{selectedSubject?.extraText}</p>
+        {selectedSubject?.images.map((img, index) => (
+          <img key={index} src={img} alt={`Image ${index}`} />
+        ))}
       </>
     )
   );

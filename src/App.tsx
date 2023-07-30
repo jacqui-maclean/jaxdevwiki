@@ -1,10 +1,10 @@
 import { useState } from "react";
 import data from "./assets/data.json";
-import "./App.css";
-import SubjectDetail from "./components/SubjectDetail/SubjectDetail";
 import FileList from "./components/FileList";
 import NavBar from "./components/NavBar/NavBar";
-
+import SubjectDetail from "./components/SubjectDetail/SubjectDetail";
+import "./App.css";
+//although not used I like to see the represenation of Data here
 interface Data {
   data: Categories;
 }
@@ -37,26 +37,32 @@ function App() {
   const handleCallIndex = () => {
     setPageType("list");
   };
-
-  const removeTabbedPage = (product: Product) => {
-    let originalIndex = selectedSubjects.findIndex(
-      (item) => item.slug === product?.slug
-    );
-    //if its the last in the array then we need to go back one
-    let newIndex =
-      originalIndex + 1 == selectedSubjects.length
-        ? originalIndex - 1
-        : originalIndex + 1;
-
-    if (newIndex !== -1) {
-      setSelectedSubject(selectedSubjects[newIndex]);
-    } else {
-      setSelectedSubject(null);
-      setPageType("list");
-    }
-    //then we need to remove the product from the array
+  const removeSubjectfromArray = (product: Product) => {
     const filteredArray = selectedSubjects.filter((item) => product !== item);
     setSelectedSubjects(filteredArray);
+  };
+
+  const removeTabbedPage = (product: Product) => {
+    //if the page is being removed from the tabs but is not currently open then we should stay on the open page and remove the tab
+    //that would mean remove the item from the array but do not change the selectedSubject
+    if (product === selectedSubject) {
+      let originalIndex = selectedSubjects.findIndex(
+        (item) => item.slug === product?.slug
+      );
+      //if its the last in the array then we need to go back one
+      let newIndex =
+        originalIndex + 1 == selectedSubjects.length
+          ? originalIndex - 1
+          : originalIndex + 1;
+
+      if (newIndex !== -1) {
+        setSelectedSubject(selectedSubjects[newIndex]);
+      } else {
+        setSelectedSubject(null);
+        setPageType("list");
+      }
+    }
+    removeSubjectfromArray(product);
   };
 
   const handleClosePage = (product: Product) => {
@@ -66,6 +72,7 @@ function App() {
     event: React.MouseEvent<SVGElement, MouseEvent>,
     product: Product
   ) => {
+    //stop the event from bubbling up to the parent div and triggering the onNavClick event
     event.stopPropagation();
     removeTabbedPage(product);
   };
@@ -86,6 +93,7 @@ function App() {
         onIndexClick={() => setPageType("list")}
         selectedSubjects={selectedSubjects}
         onCloseTab={handleCloseTab}
+        selectedSubject={selectedSubject}
       />
       {pageType === "list" ? (
         <FileList

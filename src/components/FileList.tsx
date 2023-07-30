@@ -50,6 +50,8 @@ const FileList = ({ handleSubjectSelect, categories }: Props) => {
       </div>
       <CardGrid>
         {Object.keys(categories).map((categoryName) => (
+          //for each category in categories, create a Category component
+          //Card is purely for styling purposes (as is CardGrid)
           <Card key={categoryName}>
             <Category
               header={categoryName}

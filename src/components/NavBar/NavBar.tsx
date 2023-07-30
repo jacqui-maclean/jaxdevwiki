@@ -5,6 +5,7 @@ interface Props {
   onNavClick: (product: Product | undefined) => void;
   onIndexClick: () => void;
   selectedSubjects: Product[];
+  selectedSubject: Product | null;
   onCloseTab: (
     event: React.MouseEvent<SVGElement, MouseEvent>,
     product: Product
@@ -16,6 +17,7 @@ const NavBar = ({
   onIndexClick,
   selectedSubjects,
   onCloseTab,
+  selectedSubject,
 }: Props) => {
   return (
     <div style={{ display: "flex" }}>
@@ -24,7 +26,11 @@ const NavBar = ({
       </div>
       {selectedSubjects.map((subject) => (
         <div
-          className="navbar-item"
+          className={
+            subject.title === selectedSubject?.title
+              ? "navbar-item selected"
+              : "navbar-item "
+          }
           onClick={() => onNavClick(subject)}
           key={subject.slug}
         >
