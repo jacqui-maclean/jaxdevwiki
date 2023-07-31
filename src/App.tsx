@@ -4,7 +4,11 @@ import FileList from "./components/FileList";
 import NavBar from "./components/NavBar/NavBar";
 import SubjectDetail from "./components/SubjectDetail/SubjectDetail";
 import "./App.css";
-//although not used I like to see the represenation of Data here
+//TODO: add test suite
+//TODO: find out about porting the data via a database/api
+//TODO make search results clickable
+//TODO: click on link opens page
+//although not used I like to see the representation of Data here
 interface Data {
   data: Categories;
 }
@@ -27,12 +31,18 @@ function App() {
   const [selectedSubject, setSelectedSubject] = useState<Product | null>(null);
   const [selectedSubjects, setSelectedSubjects] = useState<Product[]>([]);
 
-  const onAddTabbedPage = (product: Product) => {
-    product.images.length > 0 && !selectedSubjects.includes(product)
-      ? (setPageType("detail"),
-        setSelectedSubject(product),
-        setSelectedSubjects([...selectedSubjects, product]))
-      : null;
+  const addTabbedPage = (product: Product) => {
+    if (!selectedSubjects.includes(product)) {
+      setSelectedSubjects([...selectedSubjects, product]);
+    }
+  };
+
+  const onPageRequest = (product: Product) => {
+    if (product.images.length > 0) {
+      setPageType("detail");
+      setSelectedSubject(product);
+      addTabbedPage(product);
+    }
   };
 
   const handleCallIndex = () => {
@@ -99,7 +109,7 @@ function App() {
       {pageType === "list" ? (
         <FileList
           categories={data.categories}
-          handleSubjectSelect={onAddTabbedPage}
+          handleSubjectSelect={onPageRequest}
         />
       ) : (
         <SubjectDetail
