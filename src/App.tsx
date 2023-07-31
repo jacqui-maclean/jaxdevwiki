@@ -30,6 +30,7 @@ function App() {
   const [pageType, setPageType] = useState("list");
   const [selectedSubject, setSelectedSubject] = useState<Product | null>(null);
   const [selectedSubjects, setSelectedSubjects] = useState<Product[]>([]);
+  const [foundItems, setFoundItems] = useState<Product[]>();
 
   const addTabbedPage = (product: Product) => {
     if (!selectedSubjects.includes(product)) {
@@ -97,6 +98,23 @@ function App() {
         : setSelectedSubjects([...selectedSubjects, product])); //**if this is a product that is not already in the array then add to the array
   };
 
+  const handleSearch = (searchTerm: string) => {
+    let searchResult: Product[] = [];
+    let categories: Categories = data.categories;
+    for (const categoryKey in categories) {
+      //for each array of products in categories
+      const products: Product[] = categories[categoryKey];
+      // //check the array and if any matches are found, add them to the searchResult array
+      let results = products?.filter((item) => item.tags.includes(searchTerm));
+      searchResult = [...searchResult, ...results];
+    }
+    if (searchResult.length > 0) {
+      setFoundItems(searchResult);
+    } else {
+      setFoundItems([]);
+    }
+  };
+
   return (
     <>
       <NavBar
@@ -110,6 +128,8 @@ function App() {
         <FileList
           categories={data.categories}
           handleSubjectSelect={onPageRequest}
+          foundItems={foundItems}
+          handleSearch={handleSearch}
         />
       ) : (
         <SubjectDetail

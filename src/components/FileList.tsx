@@ -8,26 +8,16 @@ import Card from "./CardSimple";
 interface Props {
   handleSubjectSelect: (product: Product) => void;
   categories: Categories;
+  handleSearch: (searchTerm: string) => void;
+  foundItems: Product[] | undefined;
 }
-const FileList = ({ handleSubjectSelect, categories }: Props) => {
-  const [foundItems, setFoundItems] = useState<Product[]>();
+const FileList = ({
+  handleSubjectSelect,
+  categories,
+  handleSearch,
+  foundItems,
+}: Props) => {
   const [clickedItem, setClickedItem] = useState<string>();
-
-  const handleSearch = (searchTerm: string) => {
-    let searchResult: Product[] = [];
-    for (const categoryKey in categories) {
-      //for each array of products in categories
-      const products: Product[] = categories[categoryKey];
-      //check the array and if any matches are found, add them to the searchResult array
-      let results = products?.filter((item) => item.tags.includes(searchTerm));
-      searchResult = [...searchResult, ...results];
-    }
-    if (searchResult.length > 0) {
-      setFoundItems(searchResult);
-    } else {
-      setFoundItems([]);
-    }
-  };
 
   return (
     <>
