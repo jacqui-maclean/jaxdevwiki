@@ -6,8 +6,7 @@ import SubjectDetail from "./components/SubjectDetail/SubjectDetail";
 import "./App.css";
 //TODO: add test suite
 //TODO: find out about porting the data via a database/api
-//TODO make search results clickable
-//TODO: click on link opens page
+//TODO: add a search styling - red glow when no images on object
 //although not used I like to see the representation of Data here
 interface Data {
   data: Categories;
