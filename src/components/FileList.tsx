@@ -37,9 +37,13 @@ const FileList = ({ handleSubjectSelect, categories }: Props) => {
           ? foundItems.map((product: Product) => {
               return (
                 <div
+                  onClick={() => {
+                    handleSubjectSelect(product);
+                  }}
                   key={product.slug}
                   style={{
                     color: "dodgerblue",
+                    cursor: "pointer",
                   }}
                 >
                   {product.title}
