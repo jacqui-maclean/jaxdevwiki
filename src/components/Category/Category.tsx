@@ -7,7 +7,6 @@ interface Props {
   products: Product[];
   foundProducts: Product[] | undefined;
   onSubjectSelect: (product: Product) => void;
-  clickedItem: string | undefined;
   header: string;
 }
 

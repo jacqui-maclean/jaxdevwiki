@@ -52,7 +52,6 @@ const FileList = ({
               products={categories[categoryName]}
               foundProducts={foundItems}
               onSubjectSelect={handleSubjectSelect}
-              clickedItem={clickedItem}
             />
           </Card>
         ))}
