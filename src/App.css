@@ -13,3 +13,17 @@
   /* For older browsers that don't support gradients, you can add a fallback background color */
   background-color: #040304f6;
 }
+/* enables the element to fade in from black to red and fade back to black
+    - no need for soften-effect class*/
+.warning-on {
+  /*add on click*/
+  transition: color 0.2s ease;
+  color: red;
+  cursor: pointer;
+}
+.warning-off {
+  /*replace glow with unglow using setTimeout*/
+  transition: color 2s ease;
+  color: dodgerblue;
+  cursor: pointer;
+}

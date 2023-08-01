@@ -1,5 +1,4 @@
 .found {
-  color: #111211 !important;
   background-color: #a576db8f;
 }
 
@@ -24,15 +23,15 @@ removed with a setTimeout function, and in its place the unwarning class is adde
 
 /* enables the element to fade in from black to red and fade back to black
     - no need for soften-effect class*/
-.glow {
+.shine {
   /*add on click*/
   transition: color 0.2s ease;
   color: red;
 }
-.unglow {
+.unshine {
   /*replace glow with unglow using setTimeout*/
   transition: color 2s ease;
-  color: black;
+  color: #111211;
 }
 
 /* ---------------------- */

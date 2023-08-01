@@ -1,6 +1,6 @@
 import { useState } from "react";
 import data from "./assets/data.json";
-import FileList from "./components/FileList";
+import FileList from "./components/FileList/FileList";
 import NavBar from "./components/NavBar/NavBar";
 import SubjectDetail from "./components/SubjectDetail/SubjectDetail";
 import "./App.css";

@@ -1,0 +1,14 @@
+/* enables the element to fade in from black to red and fade back to black
+    - no need for soften-effect class*/
+.glow {
+  /*add on click*/
+  transition: color 0.2s ease;
+  color: red;
+  cursor: pointer;
+}
+.unglow {
+  /*replace glow with unglow using setTimeout*/
+  transition: color 2s ease;
+  color: dodgerblue;
+  cursor: pointer;
+}

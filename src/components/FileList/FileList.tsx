@@ -1,9 +1,10 @@
-import { Product, Categories } from "../App";
+import { Product, Categories } from "../../App";
 import { useState } from "react";
-import SearchInput from "./SearchInput";
-import Category from "./Category/Category";
-import CardGrid from "./CardGrid";
-import Card from "./CardSimple";
+import SearchInput from "../SearchInput";
+import Category from "../Category/Category";
+import CardGrid from "../CardGrid";
+import Card from "../CardSimple";
+import "./FileList.css";
 
 interface Props {
   handleSubjectSelect: (product: Product) => void;
@@ -17,7 +18,7 @@ const FileList = ({
   handleSearch,
   foundItems,
 }: Props) => {
-  const [clickedItem, setClickedItem] = useState<string>();
+  const [clickedProduct, setClickedProduct] = useState<Product | null>();
 
   return (
     <>
@@ -27,14 +28,19 @@ const FileList = ({
           ? foundItems.map((product: Product) => {
               return (
                 <div
+                  className={
+                    clickedProduct === product ? " warning-on " : "warning-off"
+                  }
+                  //add some interactivity to the clicked element, to feedback to user that their click was registered even though there is no data to display
                   onClick={() => {
                     handleSubjectSelect(product);
+                    setClickedProduct(product);
+                    // Remove the "clicked" class after a short delay (500ms)
+                    setTimeout(() => {
+                      setClickedProduct(null);
+                    }, 500);
                   }}
                   key={product.slug}
-                  style={{
-                    color: "dodgerblue",
-                    cursor: "pointer",
-                  }}
                 >
                   {product.title}
                 </div>
