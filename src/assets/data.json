@@ -262,6 +262,14 @@
     ],
     "variables": [
       {
+        "images": ["images/var-hoisting.png"],
+        "extraText": "important distinction in hoisting var is that the declaration is hoisted but not the assignment. Eg var is hoisted and available to the whole function, but it has no value assigned to it until it reaches the line of code that assigns the value - this line is not hoisted.",
+        "tags": ["variables", "var", "let", "const"],
+        "slug": "var-hoisting",
+        "title": "Var declaration and hoisting",
+        "category": "variables"
+      },
+      {
         "images": ["images/diffsBetweenVarLetConst.jpg"],
         "extraText": "",
         "tags": ["variables", "var", "let", "const"],

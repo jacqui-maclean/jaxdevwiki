@@ -5,8 +5,8 @@ import NavBar from "./components/NavBar/NavBar";
 import SubjectDetail from "./components/SubjectDetail/SubjectDetail";
 import "./App.css";
 //TODO: add test suite
-//TODO: find out about porting the data via a database/api
-//TODO: add a search styling - red glow when no images on object
+//TODO: find out about porting the data via a database/api...started Django course
+//TODO: add a search styling - red glow when no images on object, like in categories list
 //although not used I like to see the representation of Data here
 interface Data {
   data: Categories;
