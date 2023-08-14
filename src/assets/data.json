@@ -35,6 +35,37 @@
       },
 
       {
+        "images": ["images/polymorphism-and-inheritance.jpg"],
+        "extraText": "",
+        "tags": ["creation", "object", "polymorphism", "inheritance"],
+        "slug": "polymorphismAndInheritance",
+        "title": "Polymorphism and Inheritance",
+        "category": "objects"
+      },
+      {
+        "images": ["images/prototype-template.jpg"],
+        "extraText": "Essentially assigning a new prototype to an object means that the object receives all the properties and methods of the prototype as a template to then build on top of.  This is a way of creating objects that share properties and methods, but also have their own unique properties and methods.",
+        "tags": [
+          "creation",
+          "object",
+          "polymorphism",
+          "inheritance",
+          "method",
+          "prototype"
+        ],
+        "slug": "polymorphismAndPrototypes",
+        "title": "Polymorphism and Prototypes",
+        "category": "objects"
+      },
+      {
+        "images": ["images/polymorphism-and-prototypes.jpg"],
+        "extraText": "the method highest up in the tree will be called, eg if duplicate is called in the scenarioo below, then the method in the snowdrop prototype is the version that will be called  - this is because the method is not found in the snowdrop object, so it looks up the prototype chain until it finds it.",
+        "tags": ["creation", "object", "polymorphism", "inheritance", "method"],
+        "slug": "polymorphism-and-prototype",
+        "title": "Polymorphism and Method Selection",
+        "category": "objects"
+      },
+      {
         "images": [],
         "extraText": "This when you literally write out the object",
         "tags": ["objectCreation", "object", "literal"],
@@ -384,6 +415,16 @@
         "slug": "makeRemoteRepo",
         "title": "Make Remote Repo",
         "category": "git"
+      }
+    ],
+    "react": [
+      {
+        "images": ["images/react-query-overview.jpg"],
+        "extraText": "",
+        "tags": ["react", "react-query"],
+        "slug": "react-query-overview",
+        "title": "React Query Overview",
+        "category": "react"
       }
     ]
   }
