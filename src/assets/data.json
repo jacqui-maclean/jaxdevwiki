@@ -2,8 +2,12 @@
   "categories": {
     "objects": [
       {
-        "images": ["images/constructorAndFactoryFunctions.jpg"],
-        "extraText": "",
+        "images": [
+          "images/constructorAndFactoryFunctions.jpg",
+          "images/FactoryFunction.jpg",
+          "images/constructor.jpg"
+        ],
+        "extraText": "Examples of factory & constructor functions - these functions return an object. You can also define an object using an object literal, but this is not a function, and so would not lend itself to creating multiple objects with the same properties and methods.  Factory and constructor functions are a way of creating objects that share properties and methods, but also have their own unique properties and methods.",
         "tags": ["object", "constructor", "factory", "functions"],
         "slug": "objectConstructor",
         "title": "Factory and Constructor Functions",
@@ -17,23 +21,6 @@
         "title": "Getters and Setters",
         "category": "objects"
       },
-      {
-        "images": ["images/FactoryFunction.jpg"],
-        "extraText": "This is an example of a factory function - it is a function that returns an object",
-        "tags": ["factory", "objectCreation", "function"],
-        "slug": "factory",
-        "title": "Object Factory Functions",
-        "category": "objects"
-      },
-      {
-        "images": [],
-        "extraText": "",
-        "tags": ["constructor", "object", "function"],
-        "slug": "constructor",
-        "title": "Object Constructor Functions",
-        "category": "objects"
-      },
-
       {
         "images": ["images/polymorphism-and-inheritance.jpg"],
         "extraText": "",
