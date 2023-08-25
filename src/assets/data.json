@@ -2,6 +2,14 @@
   "categories": {
     "objects": [
       {
+        "images": ["images/objectsOverview1.jpg"],
+        "extraText": "",
+        "tags": ["variables", "object", "objects"],
+        "slug": "objectOverview",
+        "title": "Objects overview",
+        "category": "objects"
+      },
+      {
         "images": [
           "images/constructorAndFactoryFunctions.jpg",
           "images/FactoryFunction.jpg",
@@ -60,7 +68,6 @@
         "title": "Object Literal",
         "category": "objects"
       },
-
       {
         "images": ["images/objectEntries.jpg"],
         "extraText": "converts each property in an object into an key/value array",
@@ -92,14 +99,6 @@
         "tags": ["cloning", "clone", "object"],
         "slug": "cloning",
         "title": "Cloning",
-        "category": "objects"
-      },
-      {
-        "images": ["images/objectsOverview.jpg"],
-        "extraText": "",
-        "tags": ["variables", "object", "objects"],
-        "slug": "objectOverview",
-        "title": "Objects overview",
         "category": "objects"
       },
       {
