@@ -21,7 +21,7 @@
         "category": "objects"
       },
       {
-        "images": [],
+        "images": ["images/constructorAndFactoryFunction.jpg"],
         "extraText": "",
         "tags": ["factory", "objectCreation", "function"],
         "slug": "factory",
