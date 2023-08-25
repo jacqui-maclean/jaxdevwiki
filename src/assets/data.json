@@ -95,17 +95,6 @@
         "category": "objects"
       },
       {
-        "images": [
-          "images/valueVSreferenceTypes.jpg",
-          "images/variablesDetail.jpg"
-        ],
-        "extraText": "",
-        "tags": ["variables", "value", "reference", "types", "primitive"],
-        "slug": "valueVSreference",
-        "title": "Primitive/Value Types vs Reference Types",
-        "category": "objects"
-      },
-      {
         "images": ["images/objectsOverview.jpg"],
         "extraText": "",
         "tags": ["variables", "object", "objects"],
@@ -124,7 +113,7 @@
     ],
     "functions": [
       {
-        "images": ["node.jpg"],
+        "images": ["images/node.jpg"],
         "extraText": "",
         "tags": ["function", "node", "Javascript"],
         "slug": "node",
@@ -315,11 +304,14 @@
         "category": "variables"
       },
       {
-        "images": [],
+        "images": [
+          "images/valueVSreferenceTypes.jpg",
+          "images/variablesDetail.jpg"
+        ],
         "extraText": "",
-        "tags": ["variables", "object"],
-        "slug": "reference",
-        "title": "Reference Types",
+        "tags": ["variables", "value", "reference", "types", "primitive"],
+        "slug": "valueVSreference",
+        "title": "Primitive/Value Types vs Reference Types",
         "category": "variables"
       }
     ],
