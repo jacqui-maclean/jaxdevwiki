@@ -19,7 +19,7 @@
       },
       {
         "images": ["images/FactoryFunction.jpg"],
-        "extraText": "",
+        "extraText": "This is an example of a factory function - it is a function that returns an object",
         "tags": ["factory", "objectCreation", "function"],
         "slug": "factory",
         "title": "Object Factory Functions",
@@ -92,7 +92,7 @@
         "category": "objects"
       },
       {
-        "images": [],
+        "images": ["images/forInForOfLoops.jpg"],
         "extraText": "",
         "tags": ["loops", "loops", "looping", "object", "array"],
         "slug": "loopsArrayVSObjects",
