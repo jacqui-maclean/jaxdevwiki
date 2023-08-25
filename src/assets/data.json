@@ -2,11 +2,14 @@
   "categories": {
     "objects": [
       {
-        "images": ["images/constructorAndFactoryFunctions.jpg"],
+        "images": [
+          "images/constructorAndFactoryFunctions.jpg",
+          "images/constructorAndFactoryFunction.jpg"
+        ],
         "extraText": "",
         "tags": ["object", "constructor", "factory", "functions"],
         "slug": "objectConstructor",
-        "title": "Object Constructor",
+        "title": "Factory and Constructor Functions",
         "category": "objects"
       },
       {
@@ -419,7 +422,11 @@
     ],
     "react": [
       {
-        "images": ["images/react-query-overview.jpg"],
+        "images": [
+          "images/react-query-overview.jpg",
+          "images/reactQuery2.jpg",
+          "images/reactQuery3.jpg"
+        ],
         "extraText": "",
         "tags": ["react", "react-query"],
         "slug": "react-query-overview",
