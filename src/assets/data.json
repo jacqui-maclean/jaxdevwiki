@@ -122,10 +122,10 @@
     "functions": [
       {
         "images": ["images/ES7.png"],
-        "extraText": "ES6 introduced significant changes and enhancements to the JavaScript language, including features like arrow functions, classes, template literals, block-scoped variables (let and const), and more. It was a major update to the language and brought a lot of improvements for developers.",
-        "tags": ["function", "ES7", "functions", "ES6", "Javascript"],
+        "extraText": "ECMA(2015) or ES6 introduced significant changes and enhancements to the JavaScript language, including features like arrow functions, classes, template literals, block-scoped variables (let and const).ECMA2016(ES7) introduced the includes() method for arrays, and the exponentiation operator.ECMA2017(ES8) introduced async functions, shared memory, and atomics, and Object.values() and Object.entries() methods.ECMA2018(ES9) introduced asynchronous iteration, rest/spread properties, and Promise.prototype.finally().ECMA2019(ES10) introduced Array.flat() and Array.flatMap() methods, and Object.fromEntries() method.ECMA2020(ES11) introduced the nullish coalescing operator (??), optional chaining operator (?.), and Promise.allSettled() method.ECMA2021(ES12) introduced the String.prototype.replaceAll() method, and the Promise.any() method. ECMA2022(ES13) introduced the String.prototype.at() method, and the Promise.any() method.ECMA2023(ES14) introduced the String.prototype.replaceAll() method, and the Promise.any() method.",
+        "tags": ["function", "ES7", "functions", "ES6", "Javascript", "ECMA"],
         "slug": "ES7",
-        "title": "ES6 and ES7",
+        "title": "ECMAScript versions from ES6 to ES14(ECMA2023)",
         "category": "functions"
       },
       {
