@@ -2,10 +2,7 @@
   "categories": {
     "objects": [
       {
-        "images": [
-          "images/constructorAndFactoryFunctions.jpg",
-          "images/constructorAndFactoryFunction.jpg"
-        ],
+        "images": ["images/constructorAndFactoryFunctions.jpg"],
         "extraText": "",
         "tags": ["object", "constructor", "factory", "functions"],
         "slug": "objectConstructor",
@@ -21,7 +18,7 @@
         "category": "objects"
       },
       {
-        "images": ["images/constructorAndFactoryFunction.jpg"],
+        "images": ["images/FactoryFunction.jpg"],
         "extraText": "",
         "tags": ["factory", "objectCreation", "function"],
         "slug": "factory",
