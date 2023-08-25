@@ -93,7 +93,7 @@
       },
       {
         "images": ["images/forInForOfLoops.jpg"],
-        "extraText": "",
+        "extraText": "ES6 introduced significant changes and enhancements to the JavaScript language, including features like arrow functions, classes, template literals, block-scoped variables (let and const), and more. It was a major update to the language and brought a lot of improvements for developers.",
         "tags": ["loops", "loops", "looping", "object", "array"],
         "slug": "loopsArrayVSObjects",
         "title": "Compare looping over Objects with Looping over Arrays",
@@ -133,6 +133,14 @@
       }
     ],
     "functions": [
+      {
+        "images": ["images/ES7.png"],
+        "extraText": "ES6 introduced significant changes and enhancements to the JavaScript language, including features like arrow functions, classes, template literals, block-scoped variables (let and const), and more. It was a major update to the language and brought a lot of improvements for developers.",
+        "tags": ["function", "ES7", "functions", "ES6", "Javascript"],
+        "slug": "ES7",
+        "title": "ES6 and ES7",
+        "category": "functions"
+      },
       {
         "images": ["images/FunctionArgumentObject.jpg"],
         "extraText": "",
