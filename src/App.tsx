@@ -29,12 +29,12 @@ export interface Categories {
 function App() {
   const [pageType, setPageType] = useState("list");
   const [currentPage, setCurrentPage] = useState<Product | null>(null);
-  const [selectedSubjects, setSelectedSubjects] = useState<Product[]>([]); //eg open tabs
+  const [openTabs, setOpenTabs] = useState<Product[]>([]);
   const [foundItems, setFoundItems] = useState<Product[]>();
 
   const addTabbedPage = (product: Product) => {
-    if (!selectedSubjects.includes(product)) {
-      setSelectedSubjects([...selectedSubjects, product]);
+    if (!openTabs.includes(product)) {
+      setOpenTabs([...openTabs, product]);
     }
   };
 
@@ -50,25 +50,25 @@ function App() {
     setPageType("list");
   };
   const removeSubjectfromArray = (product: Product) => {
-    const filteredArray = selectedSubjects.filter((item) => product !== item);
-    setSelectedSubjects(filteredArray);
+    const filteredArray = openTabs.filter((item) => product !== item);
+    setOpenTabs(filteredArray);
   };
 
   const removeTabbedPage = (product: Product) => {
     //if the page is being removed from the tabs but is not currently open then we should stay on the open page and remove the tab
     //that would mean remove the item from the array but do not change the currentPage
     if (product === currentPage) {
-      let originalIndex = selectedSubjects.findIndex(
+      let originalIndex = openTabs.findIndex(
         (item) => item.slug === product?.slug
       );
       //if its the last in the array then we need to go back one
       let newIndex =
-        originalIndex + 1 == selectedSubjects.length
+        originalIndex + 1 == openTabs.length
           ? originalIndex - 1
           : originalIndex + 1;
 
       if (newIndex !== -1) {
-        setCurrentPage(selectedSubjects[newIndex]);
+        setCurrentPage(openTabs[newIndex]);
       } else {
         setCurrentPage(null);
         setPageType("list");
@@ -93,9 +93,7 @@ function App() {
     setPageType("detail");
     product &&
       (setCurrentPage(product),
-      selectedSubjects.includes(product)
-        ? null
-        : setSelectedSubjects([...selectedSubjects, product])); //**if this is a product that is not already in the array then add to the array
+      openTabs.includes(product) ? null : setOpenTabs([...openTabs, product])); //**if this is a product that is not already in the array then add to the array
   };
 
   const handleSearch = (searchTerm: string) => {
@@ -120,7 +118,7 @@ function App() {
       <NavBar
         onNavClick={handleNavBarClick}
         onIndexClick={() => setPageType("list")}
-        selectedSubjects={selectedSubjects}
+        selectedSubjects={openTabs}
         onCloseTab={handleCloseTab}
         selectedSubject={currentPage}
       />
