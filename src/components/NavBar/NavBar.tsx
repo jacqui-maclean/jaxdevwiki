@@ -2,36 +2,30 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Product } from "../../App";
 import "./NavBar.css";
 interface Props {
-  onNavClick: (product: Product | undefined) => void;
-  onIndexClick: () => void;
-  selectedSubjects: Product[];
-  selectedSubject: Product | null;
-  onCloseTab: (
+  viewPage: (product: Product | undefined) => void;
+  goToHome: () => void;
+  tabs: Product[];
+  currentPage: Product | null;
+  closeTab: (
     event: React.MouseEvent<SVGElement, MouseEvent>,
     product: Product
   ) => void;
 }
 
-const NavBar = ({
-  onNavClick,
-  onIndexClick,
-  selectedSubjects,
-  onCloseTab,
-  selectedSubject,
-}: Props) => {
+const NavBar = ({ viewPage, goToHome, tabs, closeTab, currentPage }: Props) => {
   return (
     <div style={{ display: "flex" }}>
-      <div className="navbar-item" onClick={() => onIndexClick()}>
+      <div className="navbar-item" onClick={() => goToHome()}>
         Index
       </div>
-      {selectedSubjects.map((subject) => (
+      {tabs.map((subject) => (
         <div
           className={
-            subject.title === selectedSubject?.title
+            subject.title === currentPage?.title
               ? "navbar-item selected"
               : "navbar-item "
           }
-          onClick={() => onNavClick(subject)}
+          onClick={() => viewPage(subject)}
           key={subject.slug}
         >
           {subject.title}
@@ -40,7 +34,7 @@ const NavBar = ({
             <AiOutlineClose
               color="black"
               size="1rem"
-              onClick={(event) => onCloseTab(event, subject)}
+              onClick={(event) => closeTab(event, subject)}
             />
           </div>
         </div>

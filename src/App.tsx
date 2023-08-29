@@ -29,12 +29,12 @@ export interface Categories {
 function App() {
   const [pageType, setPageType] = useState("list");
   const [currentPage, setCurrentPage] = useState<Product | null>(null);
-  const [openTabs, setOpenTabs] = useState<Product[]>([]);
+  const [tabs, setTabs] = useState<Product[]>([]);
   const [foundItems, setFoundItems] = useState<Product[]>();
 
   const addTabbedPage = (product: Product) => {
-    if (!openTabs.includes(product)) {
-      setOpenTabs([...openTabs, product]);
+    if (!tabs.includes(product)) {
+      setTabs([...tabs, product]);
     }
   };
 
@@ -50,25 +50,23 @@ function App() {
     setPageType("list");
   };
   const removeSubjectfromArray = (product: Product) => {
-    const filteredArray = openTabs.filter((item) => product !== item);
-    setOpenTabs(filteredArray);
+    const filteredArray = tabs.filter((item) => product !== item);
+    setTabs(filteredArray);
   };
 
   const removeTabbedPage = (product: Product) => {
     //if the page is being removed from the tabs but is not currently open then we should stay on the open page and remove the tab
     //that would mean remove the item from the array but do not change the currentPage
     if (product === currentPage) {
-      let originalIndex = openTabs.findIndex(
-        (item) => item.slug === product?.slug
-      );
+      let originalIndex = tabs.findIndex((item) => item.slug === product?.slug);
       //if its the last in the array then we need to go back one
       let newIndex =
-        originalIndex + 1 == openTabs.length
+        originalIndex + 1 == tabs.length
           ? originalIndex - 1
           : originalIndex + 1;
 
       if (newIndex !== -1) {
-        setCurrentPage(openTabs[newIndex]);
+        setCurrentPage(tabs[newIndex]);
       } else {
         setCurrentPage(null);
         setPageType("list");
@@ -89,11 +87,11 @@ function App() {
     removeTabbedPage(product);
   };
 
-  const handleNavBarClick = (product: Product | undefined) => {
+  const handleViewPage = (product: Product | undefined) => {
     setPageType("detail");
     product &&
       (setCurrentPage(product),
-      openTabs.includes(product) ? null : setOpenTabs([...openTabs, product])); //**if this is a product that is not already in the array then add to the array
+      tabs.includes(product) ? null : setTabs([...tabs, product])); //**if this is a product that is not already in the array then add to the array
   };
 
   const handleSearch = (searchTerm: string) => {
@@ -116,11 +114,11 @@ function App() {
   return (
     <>
       <NavBar
-        onNavClick={handleNavBarClick}
-        onIndexClick={() => setPageType("list")}
-        selectedSubjects={openTabs}
-        onCloseTab={handleCloseTab}
-        selectedSubject={currentPage}
+        viewPage={handleViewPage}
+        goToHome={() => setPageType("list")}
+        tabs={tabs}
+        closeTab={handleCloseTab}
+        currentPage={currentPage}
       />
       {pageType === "list" ? (
         <FileList
