@@ -6,6 +6,7 @@ import SubjectDetail from "./components/SubjectDetail/SubjectDetail";
 import "./App.css";
 //TODO: add test suite
 //TODO: find out about porting the data via a database/api...started Django course
+//Decided to go withnNode.js with mongoDB to deploy to heroku
 
 //although not used I like to see the representation of Data here
 interface Data {
@@ -27,8 +28,8 @@ export interface Categories {
 
 function App() {
   const [pageType, setPageType] = useState("list");
-  const [selectedSubject, setSelectedSubject] = useState<Product | null>(null);
-  const [selectedSubjects, setSelectedSubjects] = useState<Product[]>([]);
+  const [currentPage, setCurrentPage] = useState<Product | null>(null);
+  const [selectedSubjects, setSelectedSubjects] = useState<Product[]>([]); //eg open tabs
   const [foundItems, setFoundItems] = useState<Product[]>();
 
   const addTabbedPage = (product: Product) => {
@@ -40,12 +41,12 @@ function App() {
   const onPageRequest = (product: Product) => {
     if (product.images.length > 0) {
       setPageType("detail");
-      setSelectedSubject(product);
+      setCurrentPage(product);
       addTabbedPage(product);
     }
   };
 
-  const handleCallIndex = () => {
+  const handleGoToHome = () => {
     setPageType("list");
   };
   const removeSubjectfromArray = (product: Product) => {
@@ -55,8 +56,8 @@ function App() {
 
   const removeTabbedPage = (product: Product) => {
     //if the page is being removed from the tabs but is not currently open then we should stay on the open page and remove the tab
-    //that would mean remove the item from the array but do not change the selectedSubject
-    if (product === selectedSubject) {
+    //that would mean remove the item from the array but do not change the currentPage
+    if (product === currentPage) {
       let originalIndex = selectedSubjects.findIndex(
         (item) => item.slug === product?.slug
       );
@@ -67,9 +68,9 @@ function App() {
           : originalIndex + 1;
 
       if (newIndex !== -1) {
-        setSelectedSubject(selectedSubjects[newIndex]);
+        setCurrentPage(selectedSubjects[newIndex]);
       } else {
-        setSelectedSubject(null);
+        setCurrentPage(null);
         setPageType("list");
       }
     }
@@ -91,7 +92,7 @@ function App() {
   const handleNavBarClick = (product: Product | undefined) => {
     setPageType("detail");
     product &&
-      (setSelectedSubject(product),
+      (setCurrentPage(product),
       selectedSubjects.includes(product)
         ? null
         : setSelectedSubjects([...selectedSubjects, product])); //**if this is a product that is not already in the array then add to the array
@@ -121,7 +122,7 @@ function App() {
         onIndexClick={() => setPageType("list")}
         selectedSubjects={selectedSubjects}
         onCloseTab={handleCloseTab}
-        selectedSubject={selectedSubject}
+        selectedSubject={currentPage}
       />
       {pageType === "list" ? (
         <FileList
@@ -132,8 +133,8 @@ function App() {
         />
       ) : (
         <SubjectDetail
-          selectedSubject={selectedSubject}
-          onCallIndex={handleCallIndex}
+          selectedSubject={currentPage}
+          onCallIndex={handleGoToHome}
           onClosePage={handleClosePage}
         />
       )}
