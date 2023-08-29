@@ -1,0 +1,14 @@
+.gradient {
+  background: linear-gradient(90deg, #d0a3d5, #894793);
+  /* For older browsers that don't support gradients, you can add a fallback background color */
+  background-color: #f9c4ff;
+}
+.cardsize {
+  height: 10rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.info {
+  color: #0703efa5;
+}

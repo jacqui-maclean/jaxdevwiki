@@ -1,6 +1,6 @@
 //simple card that can be used for any purpose - based on bootstrap card
 import { ReactNode } from "react";
-import "./Card/Card.css";
+import "./CardSimple/CardSimple.css";
 
 interface Props {
   children: ReactNode;

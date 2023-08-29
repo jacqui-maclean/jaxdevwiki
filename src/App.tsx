@@ -38,7 +38,7 @@ function App() {
     }
   };
 
-  const onPageRequest = (product: Product) => {
+  const handleOpenPage = (product: Product) => {
     if (product.images.length > 0) {
       setPageType("detail");
       setCurrentPage(product);
@@ -49,6 +49,7 @@ function App() {
   const handleGoToHome = () => {
     setPageType("list");
   };
+
   const removeSubjectfromArray = (product: Product) => {
     const filteredArray = tabs.filter((item) => product !== item);
     setTabs(filteredArray);
@@ -78,6 +79,7 @@ function App() {
   const handleClosePage = (product: Product) => {
     removeTabbedPage(product);
   };
+
   const handleCloseTab = (
     event: React.MouseEvent<SVGElement, MouseEvent>,
     product: Product
@@ -123,15 +125,15 @@ function App() {
       {pageType === "list" ? (
         <FileList
           categories={data.categories}
-          handleSubjectSelect={onPageRequest}
+          onOpenPage={handleOpenPage}
           foundItems={foundItems}
           handleSearch={handleSearch}
         />
       ) : (
         <SubjectDetail
-          selectedSubject={currentPage}
-          onCallIndex={handleGoToHome}
-          onClosePage={handleClosePage}
+          currentPage={currentPage}
+          goToHome={handleGoToHome}
+          closePage={handleClosePage}
         />
       )}
     </>

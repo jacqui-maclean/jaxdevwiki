@@ -3,42 +3,39 @@ import { BsArrowLeftSquare } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { SlArrowLeft } from "react-icons/sl"; //
-
+//TODO find a home icon
 import "./SubjectDetail.css";
 
 interface Props {
-  selectedSubject: Product | null;
-  onCallIndex: () => void;
-  onClosePage: (product: Product) => void;
+  currentPage: Product | null;
+  goToHome: () => void;
+  closePage: (product: Product) => void;
 }
 
-const SubjectDetail = ({
-  selectedSubject,
-  onCallIndex,
-  onClosePage,
-}: Props) => {
+const SubjectDetail = ({ currentPage, goToHome, closePage }: Props) => {
   return (
-    selectedSubject && (
-      <>
+    currentPage && (
+      <div className="text-color">
         <div className="icon-wrapper">
           <SlArrowLeft
             color="black"
             size="1.75rem"
-            onClick={onCallIndex}
+            onClick={goToHome}
             style={{ paddingTop: "4px" }}
           />
           <AiOutlineClose
             color="black"
             size="2rem"
-            onClick={() => onClosePage(selectedSubject)}
+            onClick={() => closePage(currentPage)}
           />
         </div>
-        <h3 style={{ color: "#adb5bd" }}>{selectedSubject?.title}</h3>
-        <p style={{ color: "#adb5bd" }}>{selectedSubject?.extraText}</p>
-        {selectedSubject?.images.map((img, index) => (
+        {/* TODO - make sure that the animations still work if we use className instead of inline styles*/}
+        <h3>{currentPage?.title}</h3>
+        <p>{currentPage?.extraText}</p>
+        {currentPage?.images.map((img, index) => (
           <img key={index} src={img} alt={`Image ${index}`} />
         ))}
-      </>
+      </div>
     )
   );
 };
