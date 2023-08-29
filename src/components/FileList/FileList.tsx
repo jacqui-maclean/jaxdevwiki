@@ -3,17 +3,17 @@ import { useState } from "react";
 import SearchInput from "../SearchInput";
 import Category from "../Category/Category";
 import CardGrid from "../CardGrid";
-import Card from "../CardSimple";
+import Card from "../CardSimple/CardSimple";
 import "./FileList.css";
 
 interface Props {
-  handleSubjectSelect: (product: Product) => void;
+  onOpenPage: (product: Product) => void;
   categories: Categories;
   handleSearch: (searchTerm: string) => void;
   foundItems: Product[] | undefined;
 }
 const FileList = ({
-  handleSubjectSelect,
+  onOpenPage,
   categories,
   handleSearch,
   foundItems,
@@ -33,7 +33,7 @@ const FileList = ({
                   }
                   //add some interactivity to the clicked element, to feedback to user that their click was registered even though there is no data to display
                   onClick={() => {
-                    handleSubjectSelect(product);
+                    onOpenPage(product);
                     setClickedProduct(product);
                     // Remove the "clicked" class after a short delay (500ms)
                     setTimeout(() => {
@@ -51,13 +51,13 @@ const FileList = ({
       <CardGrid>
         {Object.keys(categories).map((categoryName) => (
           //for each category in categories, create a Category component
-          //Card is purely for styling purposes (as is CardGrid)
+          //Card (SimpleCard) is purely for styling purposes (as is CardGrid)
           <Card key={categoryName}>
             <Category
               header={categoryName}
               products={categories[categoryName]}
               foundProducts={foundItems}
-              onSubjectSelect={handleSubjectSelect}
+              handleOpenPage={onOpenPage}
             />
           </Card>
         ))}
