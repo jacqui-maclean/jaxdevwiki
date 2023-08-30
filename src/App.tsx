@@ -6,7 +6,7 @@ import SubjectDetail from "./components/SubjectDetail/SubjectDetail";
 import "./App.css";
 //TODO: add test suite
 //TODO: find out about porting the data via a database/api...started Django course
-//Decided to go withnNode.js with mongoDB to deploy to heroku
+//Decided to go with Node.js with MongoDB to deploy to heroku
 
 //although not used I like to see the representation of Data here
 interface Data {
@@ -50,15 +50,14 @@ function App() {
     setPageType("list");
   };
 
-  const removeSubjectfromArray = (product: Product) => {
+  const removeTabfromArray = (product: Product) => {
     const filteredArray = tabs.filter((item) => product !== item);
     setTabs(filteredArray);
   };
 
   const removeTabbedPage = (product: Product) => {
-    //if the page is being removed from the tabs but is not currently open then we should stay on the open page and remove the tab
-    //that would mean remove the item from the array but do not change the currentPage
     if (product === currentPage) {
+      //if you are closing the current page then figure out which page to mount in its place
       let originalIndex = tabs.findIndex((item) => item.slug === product?.slug);
       //if its the last in the array then we need to go back one
       let newIndex =
@@ -73,7 +72,8 @@ function App() {
         setPageType("list");
       }
     }
-    removeSubjectfromArray(product);
+    //if the page is not currently open then stay on the current page and remove the tab
+    removeTabfromArray(product);
   };
 
   const handleClosePage = (product: Product) => {

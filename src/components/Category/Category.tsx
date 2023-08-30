@@ -17,14 +17,14 @@ const Category = ({
   header,
 }: Props) => {
   const [clickedProduct, setClickedProduct] = useState<Product | null>(null);
-
+  //when clickedProduct
   return (
     <div className="card mt-9">
       <h2 className="card-header">{header}</h2>
       {products?.map((item: Product) => (
         <div
           key={item.slug}
-          //check to see if the item is in the foundProducts array
+          //adding styling 1.if the item is a found item  && 2.if the item is a clicked item
           className={
             item.title === //if current item title matches the title of an item in the foundProducts array
             foundProducts?.find(
@@ -34,7 +34,7 @@ const Category = ({
               ? "found " + (clickedProduct === item ? " shine " : "unshine")
               : " " + (clickedProduct === item ? " shine " : "unshine")
           }
-          //add some interactivity to the clicked element, to feedback to user that their click was registered even though there is no data to display
+          //add some interactivity to the clicked element, to feedback to user that their click was registered even though there is no data to display (althought the same styling is applied at all times, the only time the user willm see it is when there is no data yet for this title(otherwise the page will just open and the home page will be unmounted))
           style={{ cursor: "pointer" }}
           onClick={() => {
             handleOpenPage(item);
