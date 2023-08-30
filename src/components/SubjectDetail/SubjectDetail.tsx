@@ -1,6 +1,7 @@
 import { Product } from "../../App";
 import { BsArrowLeftSquare } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineHome } from "react-icons/ai";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { SlArrowLeft } from "react-icons/sl"; //
 //TODO find a home icon
@@ -10,22 +11,35 @@ interface Props {
   currentPage: Product | null;
   goToHome: () => void;
   closePage: (product: Product) => void;
+  clearTabs: () => void;
 }
 
-const SubjectDetail = ({ currentPage, goToHome, closePage }: Props) => {
+const SubjectDetail = ({
+  currentPage,
+  goToHome,
+  closePage,
+  clearTabs,
+}: Props) => {
   return (
     currentPage && (
       <div className="text-color">
         <div className="icon-wrapper">
-          <SlArrowLeft
+          <AiOutlineHome
             color="black"
-            size="1.75rem"
+            size="2rem"
             onClick={goToHome}
             style={{ paddingTop: "4px" }}
           />
+          <button
+            className="btn btn-outline-secondary"
+            type="button"
+            onClick={clearTabs}
+          >
+            Clear Tabs
+          </button>
           <AiOutlineClose
             color="black"
-            size="2rem"
+            size="1.75rem"
             onClick={() => closePage(currentPage)}
           />
         </div>

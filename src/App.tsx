@@ -113,6 +113,12 @@ function App() {
     }
   };
 
+  const handleClearTabs = () => {
+    setTabs([]);
+    setCurrentPage(null);
+    setPageType("list");
+  };
+
   return (
     <>
       <NavBar
@@ -134,6 +140,7 @@ function App() {
           currentPage={currentPage}
           goToHome={handleGoToHome}
           closePage={handleClosePage}
+          clearTabs={handleClearTabs}
         />
       )}
     </>
