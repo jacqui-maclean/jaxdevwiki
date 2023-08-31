@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Product } from "../../App";
 import { CgNotes } from "react-icons/cg";
+import { AiFillCaretDown } from "react-icons/ai";
+import { AiFillCaretUp } from "react-icons/ai";
 import "./Category.css";
 
 interface Props {
@@ -58,6 +60,21 @@ const Category = ({
         onClick={() => setCollapsed(!collapsed)}
       >
         {header}
+        {collapsed ? (
+          <AiFillCaretDown
+            color="white"
+            size="2rem"
+            onClick={() => setCollapsed(!collapsed)}
+            style={{ paddingTop: "4px" }}
+          />
+        ) : (
+          <AiFillCaretUp
+            color="white"
+            size="2rem"
+            onClick={() => setCollapsed(!collapsed)}
+            style={{ paddingTop: "4px" }}
+          />
+        )}
       </h2>
 
       {!collapsed &&
