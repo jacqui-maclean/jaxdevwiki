@@ -110,7 +110,7 @@
         "category": "objects"
       }
     ],
-    "functions": [
+    "function": [
       {
         "images": ["images/node.jpg"],
         "extraText": "",
@@ -285,7 +285,7 @@
         "category": "array"
       }
     ],
-    "variables": [
+    "variable": [
       {
         "images": ["images/var-hoisting.png"],
         "extraText": "important distinction in hoisting var is that the declaration is hoisted but not the assignment. Eg var is hoisted and available to the whole function, but it has no value assigned to it until it reaches the line of code that assigns the value - this line is not hoisted.",
@@ -426,6 +426,32 @@
         "slug": "react-query-overview",
         "title": "React Query Overview",
         "category": "react"
+      },
+      {
+        "images": ["images/breadcrumbs1.jpg", "images/breadcrumbs2.jpg"],
+        "extraText": "stuff to research-router",
+        "tags": ["react", "react-router", "router", "history", "breadcrumbs"],
+        "slug": "react-routerHistory",
+        "title": "Router-more research needed",
+        "category": "react"
+      }
+    ],
+    "web": [
+      {
+        "images": ["images/absolute & relative URL paths.jpg"],
+        "extraText": "",
+        "tags": ["url", "absolute", "relative", "path"],
+        "slug": "URLpaths",
+        "title": "Absolute and Relative URL paths",
+        "category": "web"
+      },
+      {
+        "images": ["images/schema for interpolated legend.jpg"],
+        "extraText": "",
+        "tags": ["schema", "interpolated", "legend"],
+        "slug": "schemaInterpolatedLegend",
+        "title": "Schema for interpolated Legend",
+        "category": "web"
       }
     ]
   }

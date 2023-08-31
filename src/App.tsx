@@ -120,7 +120,7 @@ function App() {
   };
 
   return (
-    <div style={{ backgroundColor: "azure" }}>
+    <div style={{ backgroundColor: "azure", minHeight: "100vh" }}>
       <NavBar
         viewPage={handleViewPage}
         goToHome={() => setPageType("list")}
