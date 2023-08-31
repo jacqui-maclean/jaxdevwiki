@@ -29,6 +29,7 @@ const Category = ({
   };
 
   useEffect(() => {
+    console.log("calling useEffect in Category.tsx");
     setContainsFoundProduct(false);
     products?.forEach((item) => {
       if (
@@ -46,7 +47,7 @@ const Category = ({
     <div className="card mt-9">
       <h2
         style={{
-          backgroundColor: containsFoundProduct ? "#823fcfd6" : "grey",
+          backgroundColor: containsFoundProduct ? "#823fcfd6" : "#5962be",
           color: "white",
         }}
         className={

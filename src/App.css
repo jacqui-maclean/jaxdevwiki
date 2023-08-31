@@ -26,4 +26,5 @@
   transition: color 2s ease;
   color: dodgerblue;
   cursor: pointer;
+  padding-bottom: 1rem;
 }
