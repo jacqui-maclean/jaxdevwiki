@@ -120,7 +120,7 @@ function App() {
   };
 
   return (
-    <>
+    <div style={{ backgroundColor: "azure" }}>
       <NavBar
         viewPage={handleViewPage}
         goToHome={() => setPageType("list")}
@@ -143,7 +143,7 @@ function App() {
           clearTabs={handleClearTabs}
         />
       )}
-    </>
+    </div>
   );
 }
 

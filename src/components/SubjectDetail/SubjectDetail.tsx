@@ -1,10 +1,6 @@
 import { Product } from "../../App";
-import { BsArrowLeftSquare } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import { AiOutlineHome } from "react-icons/ai";
-import { MdArrowBackIosNew } from "react-icons/md";
-import { SlArrowLeft } from "react-icons/sl"; //
-//TODO find a home icon
 import "./SubjectDetail.css";
 
 interface Props {
@@ -43,7 +39,6 @@ const SubjectDetail = ({
             onClick={() => closePage(currentPage)}
           />
         </div>
-        {/* TODO - make sure that the animations still work if we use className instead of inline styles*/}
         <h3>{currentPage?.title}</h3>
         <p>{currentPage?.extraText}</p>
         {currentPage?.images.map((img, index) => (

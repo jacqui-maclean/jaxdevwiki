@@ -61,3 +61,7 @@ removed with a setTimeout function, and in its place the unwarning class is adde
   color: black;
   animation: fadeIn 8s ease-in-out;
 }
+/* adding extra styles to the bootstrap class */
+.card-header {
+  cursor: pointer;
+}
